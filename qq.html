@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ</title>
+</head>
+<body>
+<script>
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    var flag = IsPC();
+    if(flag){
+        window.location.href="http://wpa.qq.com/msgrd?v=3&uin=2607908137&site=qq&menu=yes";
+    }else {
+        window.location.href="mqqwpa://im/chat?chat_type=wpa&uin=2607908137&version=1&src_type=web&web_src=lvlingseeds.com";
+    }</script>
+</body>
+</html>
