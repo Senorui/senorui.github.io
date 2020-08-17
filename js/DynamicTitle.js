@@ -4,12 +4,12 @@
  document.addEventListener('visibilitychange', function () {
      if (document.hidden) {
          $('[rel="icon"]').attr('href', "/favicon.ico");
-         document.title = 'Σ(っ °Д °;)っ 你别走吖';
+         document.title = '你别走吖 Σ(っ °Д °;)っ';
          clearTimeout(titleTime);
      }
      else {
          $('[rel="icon"]').attr('href', "/favicon.ico");
-         document.title = '(｡•ˇ‸ˇ•｡) 你可算回来了' + OriginTitle;
+         document.title = '你可算回来了 (｡•ˇ‸ˇ•｡)' + OriginTitle;
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
          }, 2000);
