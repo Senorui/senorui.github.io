@@ -1,10 +1,8 @@
 # robots.txt generated at https://senorui.top
-
+ 
 User-agent: HaosouSpider
 Disallow: /
 User-agent: 360Spider
-Disallow: /
-User-agent: Yisouspider
 Disallow: /
 User-agent: AhrefsBot
 Disallow: /
