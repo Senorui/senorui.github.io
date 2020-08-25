@@ -37,4 +37,3 @@ Disallow: /css/
 Disallow: /fonts/
 
 Sitemap: https://senorui.top/sitemap.xml
-Sitemap: https://senorui.top/baidusitemap.xml
