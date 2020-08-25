@@ -212,14 +212,14 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/search/index.html</loc>
+    <loc>https://senorui.top/tag/index.html</loc>
     
     <lastmod>2020-08-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://senorui.top/tag/index.html</loc>
+    <loc>https://senorui.top/search/index.html</loc>
     
     <lastmod>2020-08-13</lastmod>
     
@@ -249,14 +249,14 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Typecho%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://senorui.top/tags/%E6%90%AD%E5%BB%BATypecho%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/%E6%90%AD%E5%BB%BATypecho%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://senorui.top/tags/Typecho%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -312,20 +312,6 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Halo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/Docker%E9%83%A8%E7%BD%B2Halo/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://senorui.top/tags/%E5%A4%A9%E6%96%87%E7%8E%B0%E8%B1%A1/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
@@ -334,6 +320,20 @@
   
   <url>
     <loc>https://senorui.top/tags/%E5%8D%81%E4%BA%94%E7%9A%84%E6%9C%88%E4%BA%AE%E5%8D%81%E5%9B%9B%E5%9C%86/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/Halo%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/Docker%E9%83%A8%E7%BD%B2Halo/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -361,20 +361,6 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Minecraft/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/MC%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://senorui.top/tags/%E5%A4%B4%E5%83%8F%E5%88%B6%E4%BD%9C/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
@@ -383,6 +369,20 @@
   
   <url>
     <loc>https://senorui.top/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/Minecraft/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/MC%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -417,6 +417,20 @@
   </url>
   
   <url>
+    <loc>https://senorui.top/tags/AdGuard-Home/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/%E5%8E%BB%E5%B9%BF%E5%91%8ADNS%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2020-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://senorui.top/tags/Hexo%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
@@ -432,20 +446,6 @@
   
   <url>
     <loc>https://senorui.top/tags/%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/AdGuard-Home/</loc>
-    <lastmod>2020-08-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/%E5%8E%BB%E5%B9%BF%E5%91%8ADNS%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2020-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
