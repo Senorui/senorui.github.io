@@ -263,6 +263,13 @@
   </url>
   
   <url>
+    <loc>https://senorui.top/tags/Valine%E8%AF%84%E8%AE%BA/</loc>
+    <lastmod>2020-08-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://senorui.top/tags/Hexo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
@@ -277,7 +284,7 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Valine%E8%AF%84%E8%AE%BA/</loc>
+    <loc>https://senorui.top/tags/Hexo%E6%BA%90%E7%A0%81%E5%A4%87%E4%BB%BD/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -305,7 +312,14 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Hexo%E6%BA%90%E7%A0%81%E5%A4%87%E4%BB%BD/</loc>
+    <loc>https://senorui.top/tags/Halo%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-08-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/Docker%E9%83%A8%E7%BD%B2Halo/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -320,20 +334,6 @@
   
   <url>
     <loc>https://senorui.top/tags/%E5%8D%81%E4%BA%94%E7%9A%84%E6%9C%88%E4%BA%AE%E5%8D%81%E5%9B%9B%E5%9C%86/</loc>
-    <lastmod>2020-08-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/Halo%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2020-08-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/Docker%E9%83%A8%E7%BD%B2Halo/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -424,20 +424,6 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Yandex/</loc>
-    <lastmod>2020-08-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</loc>
-    <lastmod>2020-08-26</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://senorui.top/tags/AdGuard-Home/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
@@ -446,6 +432,20 @@
   
   <url>
     <loc>https://senorui.top/tags/%E5%8E%BB%E5%B9%BF%E5%91%8ADNS%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2020-08-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/Yandex/</loc>
+    <lastmod>2020-08-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/%E5%9F%9F%E5%90%8D%E9%82%AE%E7%AE%B1/</loc>
     <lastmod>2020-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
