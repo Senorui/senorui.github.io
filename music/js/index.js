@@ -211,7 +211,7 @@ $(function () {
                 $('#album-pic').attr('src',currArtwork);
 
                 bgArtwork.css({
-                    'background-image': 'url(' + currArtwork + ')'
+                    'background-image': 'url(https:' + currArtwork + ')'
                 });
             }
         });
