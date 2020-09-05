@@ -5,11 +5,10 @@ Disallow: /
 
 User-agent: *
 Allow: /
+
 Disallow: /about/
 Disallow: /files/
 Disallow: /sass/
-Disallow: /js/
 Disallow: /css/
-Disallow: /fonts/
 
 Sitemap: https://senorui.top/sitemap.xml
