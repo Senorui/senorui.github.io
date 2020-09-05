@@ -1,14 +1,9 @@
-# robots.txt generated at https://senorui.top
+# robots.txt  generated at https://senorui.top
  
 User-agent: Googlebot-Image
 Disallow: /
 
 User-agent: *
 Allow: /
-
-Disallow: /about/
-Disallow: /files/
-Disallow: /sass/
-Disallow: /css/
 
 Sitemap: https://senorui.top/sitemap.xml
