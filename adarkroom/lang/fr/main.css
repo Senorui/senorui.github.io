@@ -1,3 +1,18 @@
-/* build time:Mon Sep 21 2020 20:58:50 GMT+0800 (中国标准时间)*/
-.button{width:100px!important}#outsidePanel .button{width:115px!important}.eventPanel .button{width:122px!important}#lootButtons:before{content:"prendre :"!important}#dropMenu:before{content:"déposer :"!important}#hullRow{width:80px!important}div#workers{width:160px!important}div.button div.tooltip{width:120px!important}
-/* rebuild by neat */
+.button{width: 100px !important;}
+#outsidePanel .button{width: 115px !important;}
+.eventPanel .button {width: 122px !important;}
+#lootButtons:before {
+	content: "prendre :" !important;
+}
+#dropMenu:before {
+	content: "déposer :" !important;
+}
+#hullRow {
+    width: 80px !important;
+}
+div#workers {
+    width: 160px !important;
+}
+div.button div.tooltip {
+	width: 120px !important;
+}
