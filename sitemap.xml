@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://senorui.top/posts/1fd4.html</loc>
+    
+    <lastmod>2020-10-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://senorui.top/posts/9f09.html</loc>
     
     <lastmod>2020-10-02</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://senorui.top/posts/39fb.html</loc>
     
     <lastmod>2020-09-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/posts/1fd4.html</loc>
-    
-    <lastmod>2020-09-27</lastmod>
     
   </url>
   
@@ -382,14 +382,14 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/</loc>
+    <loc>https://senorui.top/tags/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/Hexo%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/</loc>
+    <loc>https://senorui.top/tags/%E6%B7%BB%E5%8A%A0%E7%9C%8B%E6%9D%BF%E5%A8%98/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -417,20 +417,6 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/%E5%A4%A9%E6%96%87%E7%8E%B0%E8%B1%A1/</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/%E5%8D%81%E4%BA%94%E7%9A%84%E6%9C%88%E4%BA%AE%E5%8D%81%E5%9B%9B%E5%9C%86/</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://senorui.top/tags/Halo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
@@ -446,6 +432,20 @@
   
   <url>
     <loc>https://senorui.top/tags/PWA/</loc>
+    <lastmod>2020-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/%E5%A4%A9%E6%96%87%E7%8E%B0%E8%B1%A1/</loc>
+    <lastmod>2020-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/%E5%8D%81%E4%BA%94%E7%9A%84%E6%9C%88%E4%BA%AE%E5%8D%81%E5%9B%9B%E5%9C%86/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,14 +543,14 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://senorui.top/tags/%E4%BC%98%E5%8C%96%E6%8F%90%E9%80%9F/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/%E4%BC%98%E5%8C%96%E6%8F%90%E9%80%9F/</loc>
+    <loc>https://senorui.top/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -606,20 +606,6 @@
   </url>
   
   <url>
-    <loc>https://senorui.top/tags/hexo%E5%8D%9A%E5%AE%A2%E9%94%99%E8%AF%AF/</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://senorui.top/tags/docker%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2020-10-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://senorui.top/tags/hexo%E5%8D%87%E7%BA%A7/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
@@ -648,7 +634,21 @@
   </url>
   
   <url>
+    <loc>https://senorui.top/tags/hexo%E5%8D%9A%E5%AE%A2%E9%94%99%E8%AF%AF/</loc>
+    <lastmod>2020-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://senorui.top/tags/%E4%BF%AE%E6%94%B9User%E7%94%A8%E6%88%B7%E5%90%8D/</loc>
+    <lastmod>2020-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://senorui.top/tags/docker%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-10-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
