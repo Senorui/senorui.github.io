@@ -1,4 +1,4 @@
-# robots.txt  generated at https://senorui.top
+# robots.txt  https://senorui.top
 User-agent: *
 Allow: /
 
