@@ -2,4 +2,7 @@
 User-agent: *
 Allow: /
 
+User-agent: 360Spider
+Disallow: /
+
 Sitemap: https://senorui.top/sitemap.xml
