@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">自动化多线部署Hexo博客 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,自动部署,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="利用Github Action自动生成hexo博客的静态文件并自动部署到Github仓库，再利用宝塔面板的定时任务功能通过Git同步静态文件到个人云服务器上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动化多线部署Hexo博客">
+<meta property="og:url" content="https://senorui.top/posts/17d1.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="利用Github Action自动生成hexo博客的静态文件并自动部署到Github仓库，再利用宝塔面板的定时任务功能通过Git同步静态文件到个人云服务器上。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-18T16:38:41.000Z">
+<meta property="article:modified_time" content="2024-02-09T15:56:07.727Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="自动部署">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github"><span class="toc-text">部署到Github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github%E9%85%8D%E7%BD%AE%E5%AF%86%E9%92%A5"><span class="toc-text">Github配置密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github%E9%85%8D%E7%BD%AEAction"><span class="toc-text">Github配置Action</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">部署到云服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85Git"><span class="toc-text">云服务器安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%94%9F%E6%88%90%E5%AF%86%E9%92%A5"><span class="toc-text">云服务器生成密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E5%AF%86%E9%92%A5"><span class="toc-text">云服务器部署密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pull%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">Pull到云服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-42_自动化部署Hexo博客" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">自动化多线部署Hexo博客</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.12.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.1k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 4分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+    
+<p>本站之前的部署方案是在本地写好文章并生成静态文件后再 Push 到Github 并通过 WINscp 手动上传到个人云服务器，最后再把博客源代码备份到 Github 私有仓库。</p>
+<p>每次更新文章都老费劲了，需要操作的步骤有点过于繁琐！</p></div><p></p>
+<p>现利用 Github Action 持续集成并部署 Hexo 博客。</p>
+<p>大致思路：</p>
+<ul>
+<li>源码文件 Push 到 GitHub <code>Blog</code> 私有仓库 <code>master</code> 分支</li>
+<li>Github Action 在 <code>Blog</code> 私有仓库 <code>master</code> 分支更新后，自动构建生成站点文件</li>
+<li>Github Action 将生成的静态文件推送到 <code>username.github.io</code> 仓库 <code>master</code> 分支</li>
+<li>云服务器从 GitHub Page<code>master</code> 分支拉取更新</li>
+</ul>
+<p>也就是说，整个部署过程只需要将写好源码文件 Push 到 GitHub 上存放源码仓库的 master 分支，后面的操作交给 Github Action 处理即可。</p>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><h3 id="Github配置密钥"><a href="#Github配置密钥" class="headerlink" title="Github配置密钥"></a>Github配置密钥</h3><p>在博客根目录下生成部署密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -f deploy-key</span><br></pre></td></tr></table></figure>
+<p>根目录下会有私钥 <code>deploy-key</code> 和公钥 <code>deploy-key.pub</code> 两个文件，注意排除俩文件不要push到GitHub去。</p>
+<p>复制私钥 <code>deploy-key</code> 的内容，在博客源码仓库的 <strong>Settings → Secrets → New repository secret</strong> 添加。</p>
+<p>公钥 <code>deploy-key.pub</code> 的内容，在 <code>username.github.io</code> 仓库 <strong>Settings → Secrets → New repository secret</strong> 添加。</p>
+<p><strong>若以上生成的公钥、私钥Github自动部署失败，可直接复制您电脑上的公钥、私钥配置。</strong></p>
+<h3 id="Github配置Action"><a href="#Github配置Action" class="headerlink" title="Github配置Action"></a>Github配置Action</h3><p>在存放 Hexo 博客源码的私有仓库开启 <code>Action</code>，并创建 <code>.github/workflows/action.yml</code> 配置文件，其中 <code>action.yml</code> 名字随意取。</p>
+<p>如下是一个简单且可用的配置文件，只需修改 Git 的用户名和邮箱即可。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># workflow name</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">Blog</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># master branch on push, auto run</span></span><br><span class="line"><span class="attr">on:</span> </span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line">      </span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span> </span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span> </span><br><span class="line">        </span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="comment"># check it to your workflow can access it</span></span><br><span class="line">    <span class="comment"># from: https://github.com/actions/checkout</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">Repository</span> <span class="string">master</span> <span class="string">branch</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/checkout@master</span> </span><br><span class="line">      </span><br><span class="line">    <span class="comment"># from: https://github.com/actions/setup-node  </span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span> <span class="number">12.</span><span class="string">x</span> </span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@master</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="string">&quot;12.x&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Hexo</span> <span class="string">Dependencies</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        npm install hexo-cli -g</span></span><br><span class="line"><span class="string">        npm install</span></span><br><span class="line"><span class="string"></span>    </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Deploy</span> <span class="string">Private</span> <span class="string">Key</span></span><br><span class="line">      <span class="attr">env:</span></span><br><span class="line">        <span class="attr">HEXO_DEPLOY_PRIVATE_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.HEXO_DEPLOY_PRIVATE_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        mkdir -p ~/.ssh/</span></span><br><span class="line"><span class="string">        echo &quot;$HEXO_DEPLOY_PRIVATE_KEY&quot; &gt; ~/.ssh/id_rsa </span></span><br><span class="line"><span class="string">        chmod 600 ~/.ssh/id_rsa</span></span><br><span class="line"><span class="string">        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts</span></span><br><span class="line"><span class="string"></span>        </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Git</span> <span class="string">Infomation</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        git config --global user.name &#x27;用户名&#x27; </span></span><br><span class="line"><span class="string">        git config --global user.email &#x27;邮箱地址&#x27;</span></span><br><span class="line"><span class="string"></span>    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span> </span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        hexo clean</span></span><br><span class="line"><span class="string">        hexo generate </span></span><br><span class="line"><span class="string">        hexo deploy</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+<p><code>action.yml</code>文件配置好并保存后会自动执行一次，配置无误后若自动部署成功则会出现绿色的<strong>√</strong>。</p>
+<p>打开你的 <code>username.github.io</code> 仓库即可看到已经部署成功。</p>
+<hr>
+<h2 id="部署到云服务器"><a href="#部署到云服务器" class="headerlink" title="部署到云服务器"></a>部署到云服务器</h2><h3 id="云服务器安装Git"><a href="#云服务器安装Git" class="headerlink" title="云服务器安装Git"></a>云服务器安装Git</h3><p>在云服务器上执行命令安装Git</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="云服务器生成密钥"><a href="#云服务器生成密钥" class="headerlink" title="云服务器生成密钥"></a>云服务器生成密钥</h3><p>依次执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;用户名&quot;</span><br><span class="line">git config --global user.email &quot;邮箱地址&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+
+<p>验证是否配置成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="云服务器部署密钥"><a href="#云服务器部署密钥" class="headerlink" title="云服务器部署密钥"></a>云服务器部署密钥</h3><p>将生成的私钥复制到<code>username.github.io</code>仓库的 <strong>Settings → Secrets → New repository secret</strong> 并添加。</p>
+<p>而生成的公钥需要复制到 Github 的设置中的 <strong>SSH and GPG keys</strong> 的 <strong>New SSH key</strong> 处添加。</p>
+<h3 id="Pull到云服务器"><a href="#Pull到云服务器" class="headerlink" title="Pull到云服务器"></a>Pull到云服务器</h3><p>在云服务器上执行命令初始化 Git 仓库并拉取文件。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#To站点目录</span></span><br><span class="line"><span class="built_in">cd</span> /www/wwwroot/blog     </span><br><span class="line"><span class="comment">#初始化git</span></span><br><span class="line">git init </span><br><span class="line"><span class="comment">#添加远程仓库                </span></span><br><span class="line">git remote add origin git@github.com:username/username.github.io.git      </span><br><span class="line"><span class="comment">#获取远端更新</span></span><br><span class="line">git fetch origin         </span><br><span class="line"><span class="comment">#pull远端代码到本地</span></span><br><span class="line">git pull                 </span><br><span class="line"><span class="comment">#如果报错：refusing to merge unrelated histories，则用下面的命令</span></span><br><span class="line">git pull --allow-unrelated-histories</span><br><span class="line"><span class="comment">#或者直接Git远端覆盖本地</span></span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+
+<p>在云服务器宝塔面板上开启一个定时任务即可，shell脚本为</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/blog</span><br><span class="line">git remote add origin git@github.com:username/username.github.io.git</span><br><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>
+
+<p>这样云服务器就能定时更新静态站内容，而不用手动操作了。</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>当完成以上配置以后，更新文章只需修改源代码后，执行命令三连</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p><strong>PS: 默认已经初始化过本地仓库</strong></p>
+<p>剩下的生成静态文件、部署到静态文件仓库和云服务器仓库的任务就交给 Github Action 和 Shell 脚本即可。</p>
+<p>双手瞬间轻松了很多啊👌🤣</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><strong><a target="_blank" rel="external nofollow noopener noreferrer" href="https://isudox.com/2017/01/24/deploy-site-with-travis-ci/">Travis CI 持续部署静态站方案</a></strong></li>
+<li><strong><a target="_blank" rel="external nofollow noopener noreferrer" href="https://juejin.cn/post/6844903953826578439">git同步远端项目到本地</a></strong></li>
+</ul>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/17d1.html" target="_blank" title="自动化多线部署Hexo博客">
+        https://senorui.top/posts/17d1.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/a0e3.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/a28a.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>
