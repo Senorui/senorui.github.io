@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">记修改服务器的远程SSH端口 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="SSH端口,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="怎样修改远程登录的SSH端口？！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记修改服务器的远程SSH端口">
+<meta property="og:url" content="https://senorui.top/posts/cd75.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="怎样修改远程登录的SSH端口？！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-12T12:23:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="SSH端口">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3"><span class="toc-text">修改默认端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%81%E8%AE%B8%E6%AD%A4%E7%AB%AF%E5%8F%A3"><span class="toc-text">防火墙允许此端口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8Eufw"><span class="toc-text">对于ufw</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8Eiptables"><span class="toc-text">对于iptables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8Efirewalld"><span class="toc-text">对于firewalld</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84%E6%94%BE%E8%A1%8C2020%E7%AB%AF%E5%8F%A3"><span class="toc-text">安全组放行2020端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AFSSH"><span class="toc-text">重启SSH</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-49_修改服务器的SSH登录端口" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">记修改服务器的远程SSH端口</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2021.04.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E6%B4%AA%E7%82%89%E7%82%B9%E9%9B%AA/">洪炉点雪</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 376
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 1分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+    
+<p>最近服务器总是提示遭到远程暴力破解登录服务器的攻击。</p>
+<p>而防御此攻击最直接的做法是禁用此ip，但是并不能避免别的ip扫描22端口并破解登录，所以最好的方法就是修改默认的SSH登录端口并设置复杂的登录密码。</p></div><p></p>
+<h3 id="修改默认端口"><a href="#修改默认端口" class="headerlink" title="修改默认端口"></a>修改默认端口</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>将13行的<code>#Port 22</code>取消注释并修改为<code>Port 2020</code>即可。</p>
+<h3 id="防火墙允许此端口"><a href="#防火墙允许此端口" class="headerlink" title="防火墙允许此端口"></a>防火墙允许此端口</h3><p>此处可选择直接关闭防火墙或者添加新端口，不建议关闭防火墙。</p>
+<h4 id="对于ufw"><a href="#对于ufw" class="headerlink" title="对于ufw"></a>对于ufw</h4><p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+<p>开关防火墙</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw enable</span><br><span class="line">sudo ufw disable</span><br></pre></td></tr></table></figure>
+<p>允许2020端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw allow 2020</span><br></pre></td></tr></table></figure>
+<p>删除某端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw delete allow 2020</span><br></pre></td></tr></table></figure>
+
+<h4 id="对于iptables"><a href="#对于iptables" class="headerlink" title="对于iptables"></a>对于iptables</h4><p>查看iptables的配置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -L -n</span><br></pre></td></tr></table></figure>
+<p>开关、重启防火墙</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service iptables start</span><br><span class="line">service iptables stop</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+<p>开启ssh端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 2020 -j ACCEPT</span><br><span class="line">iptables -A OUTPUT -p tcp --sport 2020 -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>保存防火墙设置并重启</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service iptables save</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+
+<h4 id="对于firewalld"><a href="#对于firewalld" class="headerlink" title="对于firewalld"></a>对于firewalld</h4><p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<p>关闭防火墙并取消开机自启</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+<p>添加2020端口规则。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=2020/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>查看是否在ports中已添加端口2020 tcp连接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
+<p>修改完成后重启防火墙。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="安全组放行2020端口"><a href="#安全组放行2020端口" class="headerlink" title="安全组放行2020端口"></a>安全组放行2020端口</h3><p>在服务商控制中心处放行安全组入方向的2020端口，即可。</p>
+<h3 id="重启SSH"><a href="#重启SSH" class="headerlink" title="重启SSH"></a>重启SSH</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service sshd restart</span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/cd75.html" target="_blank" title="记修改服务器的远程SSH端口">
+        https://senorui.top/posts/cd75.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/474d.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/b963.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

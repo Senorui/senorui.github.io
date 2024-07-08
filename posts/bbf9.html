@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">初窥 Linux Mint | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Linux Mint,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="如何在个人PC上安装Linux Mint系统，并安装个人常用软件！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初窥 Linux Mint">
+<meta property="og:url" content="https://senorui.top/posts/bbf9.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="如何在个人PC上安装Linux Mint系统，并安装个人常用软件！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-20T23:16:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Linux Mint">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-text">安装系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="toc-text">配置系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BD%AF%E4%BB%B6%E6%BA%90"><span class="toc-text">配置软件源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-text">配置语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-text">配置输入法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="toc-text">安装软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Chrome"><span class="toc-text">Google Chrome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wine%E8%BD%AF%E4%BB%B6"><span class="toc-text">Wine软件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-45_初窥Linux Mint" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">初窥 Linux Mint</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2021.01.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.2k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 4分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+
+<p>Linux Mint 由Linux Mint Team团队于2006年开始发行的一份基于Debian和Ubuntu的Linux发行版。</p>
+<p>它诞生的目的是为家庭用户和企业提供一个免费的，易用的，舒适而优雅的桌面操作系统。</p>
+<p>此文简单的讲述一下如何在实体机上安装 Linux Mint 操作系统。</p></div><p></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>所需工具：</p>
+<ul>
+<li>电脑一台</li>
+<li>U盘一枚</li>
+<li>Linux Mint 系统镜像</li>
+<li>镜像写入工具</li>
+</ul>
+<p>这里所述为在windows上实现以上准备工作。</p>
+<p>去 Linux Mint <a target="_blank" rel="external nofollow noopener noreferrer" href="https://linuxmint.com/download.php">官网</a>下载好系统镜像，Linux Mint 有三个EDITION可选择，其实就是个桌面版本不同而已，我这里选择 <strong>Cinnamon</strong>。</p>
+<p>① 下载启动盘制作工具 <strong><a target="_blank" rel="external nofollow noopener noreferrer" href="https://rufus.ie/">rufus</a></strong> 并根据官网使用说明制作启动盘即可。</p>
+<p>② 或者直接使用 <strong><a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.ventoy.net/cn/">Ventoy</a></strong> 制作，直接将ISO文件存U盘即可。</p>
+<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>将创建好ISO镜像的U盘插入电脑并重启电脑，当看到开机画面时按F2进入BIOS界面，在Boot选项中启动盘并确定，随后即可进入LinuxLive。</p>
+<p>然后点击桌面上的 <strong>Install LinuxMint</strong> 即可开始安装，这里需要考虑整个磁盘安装Linux Mint 还是进行分区安装，若分区安装可打开 <strong>Gparted</strong> 调整分区，分出一个EXT4分区以便安装Linux（记下分区编号如sda2），再分出一个SWAP分区。</p>
+<p>若整盘安装Linux Mint则在安装选项中选择删除磁盘所有数据并安装系统，若在分区中安装则需根据刚刚分的区去自己设置，设置好后点击立即安装即可。</p>
+<p>随后需要输入用户名、用户密码等即可正式开始安装。</p>
+<p><strong>PS：若整磁盘安装 Linux Mint ，在开始前记得挂载磁盘，不然重启会先进入grub界面再进入系统。</strong></p>
+<h2 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h2><p>简单讲一下系统的重要配置项，软件源、系统语言、输入法的配置。</p>
+<h3 id="配置软件源"><a href="#配置软件源" class="headerlink" title="配置软件源"></a>配置软件源</h3><p>在 <strong>系统设置→系统管理→软件源→镜像</strong> 中将主要和基础源修改为国内源，根据连接速度选择最快的即可。</p>
+<h3 id="配置语言"><a href="#配置语言" class="headerlink" title="配置语言"></a>配置语言</h3><p>在 <strong>系统设置→首选项→语言</strong> 中将所有项全设置为 <strong>Chinese,China</strong> 并应用到整个系统中，记得在预言支持中查看语言是否完全安装，否则需要点击一下<strong>安装语言包</strong>按钮，设置完毕重启即可。</p>
+<p>若仍然有少部分界面是英文，则执行以下命令并重启。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install language-pack-zh-hans language-pack-gnome-zh-hans</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置输入法"><a href="#配置输入法" class="headerlink" title="配置输入法"></a>配置输入法</h3><p>在 Linux Mint上我们使用搜狗输入法，先去下载搜狗输入法安装包。</p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pinyin.sogou.com/linux/?r=pinyin">https://pinyin.sogou.com/linux/?r=pinyin</a></p>
+</blockquote>
+<p>然后在 在 <strong>系统设置→首选项→输入法→简体中文</strong> 中根据提示安装<strong>fcitx</strong>并注销重新登录系统，再安装下载的搜狗输入法。</p>
+<p>最后在系统托盘中右键打开配置界面，设置搜狗输入法为第一个输入法即可，此后输入法使用与WIN无异。</p>
+<h2 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h2><p>大多数常用软件均可在自带的 <strong>软件管理器</strong> 中安装，少数需要寻找软件包来安装。</p>
+<p>下面将述需要下载安装包的Google Chrome和基于Wine的QQ、TIM、微信、迅雷和WinRAR等的安装。</p>
+<h3 id="Google-Chrome"><a href="#Google-Chrome" class="headerlink" title="Google Chrome"></a>Google Chrome</h3><p>先在官网下载安装包：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.google.cn/intl/zh-CN/chrome/">https://www.google.cn/intl/zh-CN/chrome/</a></p>
+<p>在下载的.deb包上右键选择 <strong>使用 GDebi软件包安装程序 打开</strong>即可安装。</p>
+<h3 id="Wine软件"><a href="#Wine软件" class="headerlink" title="Wine软件"></a>Wine软件</h3><p>此项目仓库：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/zq1997/deepin-wine">https://github.com/zq1997/deepin-wine</a></p>
+<p>要安装Win上的软件，需要先在 <strong>软件管理器</strong> 中安装好Wine。</p>
+<p>使用以下添加件仓库：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget -O- https://deepin-wine.i-m.dev/setup.sh | sh</span><br></pre></td></tr></table></figure>
+
+<p>仓库添加完成后使用apt命令即可安装所需的QQ、Tim和微信了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 以下两种包名安装的都是QQ</span><br><span class="line">sudo apt-get install deepin.com.qq.im</span><br><span class="line">sudo apt-get install com.qq.im.deepin</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后注销并重启电脑即可看到QQ已经安装好。</p>
+<p>其他软件包名：</p>
+<table>
+<thead>
+<tr>
+<th>应用</th>
+<th>包名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>微信</td>
+<td>com.qq.weixin.deepin</td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>com.qq.im.deepin</td>
+</tr>
+<tr>
+<td>钉钉</td>
+<td>com.dingtalk.deepin</td>
+</tr>
+<tr>
+<td>阿里旺旺</td>
+<td>com.taobao.wangwang.deepin</td>
+</tr>
+<tr>
+<td>QQ音乐</td>
+<td>com.qq.music.deepin</td>
+</tr>
+<tr>
+<td>QQ视频</td>
+<td>com.qq.video.deepin</td>
+</tr>
+<tr>
+<td>爱奇艺</td>
+<td>com.iqiyi.deepin</td>
+</tr>
+<tr>
+<td>百度网盘</td>
+<td>com.baidu.pan.deepin</td>
+</tr>
+<tr>
+<td>迅雷极速版</td>
+<td>com.thunderspeed.deepin</td>
+</tr>
+<tr>
+<td>WinRAR</td>
+<td>cn.com.winrar.deepin</td>
+</tr>
+<tr>
+<td>360压缩</td>
+<td>cn.360.yasuo.deepin</td>
+</tr>
+</tbody></table>
+<p><strong>PS：Deepin现在还没有兼容TIM，请等待官方升级。</strong></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>至此，完成了 Linux Mint 系统的安装与简单的配置与常用软件的安装，其他个性化配置需根据个人喜好设置即可！！！</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/bbf9.html" target="_blank" title="初窥 Linux Mint">
+        https://senorui.top/posts/bbf9.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/b78b.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/337b.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

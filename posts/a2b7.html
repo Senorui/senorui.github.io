@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">Hexo博客源码备份 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,备份Hexo源码,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="hexo博客部署文章的同时并将源码备份到Github仓库。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客源码备份">
+<meta property="og:url" content="https://senorui.top/posts/a2b7.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="hexo博客部署文章的同时并将源码备份到Github仓库。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-26T12:45:46.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="备份Hexo源码">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E5%91%BD%E4%BB%A4%E8%BF%9B%E8%A1%8C%E5%A4%87%E4%BB%BD"><span class="toc-text">Git命令进行备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%BA%90%E7%A0%81%E5%A4%87%E4%BB%BD%E4%BB%93%E5%BA%93%E6%88%96%E5%88%86%E6%94%AF"><span class="toc-text">创建源码备份仓库或分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%BF%85%E8%A6%81%E6%96%87%E4%BB%B6"><span class="toc-text">删除必要文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%A4%87%E4%BB%BD"><span class="toc-text">源码备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E8%BF%98%E5%8E%9F%E6%BA%90%E7%A0%81"><span class="toc-text">新电脑上还原源码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%A5%BDGit%E5%92%8Cnodejs"><span class="toc-text">安装好Git和nodejs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E6%BA%90%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-text">克隆源码到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%98%E5%8E%9Fhexo%E7%8E%AF%E5%A2%83"><span class="toc-text">还原hexo环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGit%E7%8E%AF%E5%A2%83%E5%92%8C%E6%96%B0SSH"><span class="toc-text">配置Git环境和新SSH</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%8D%9A%E5%AE%A2"><span class="toc-text">写博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-git-backup%E6%8F%92%E4%BB%B6%E5%A4%87%E4%BB%BD"><span class="toc-text">hexo-git-backup插件备份</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E4%B8%8A%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%BA%90%E7%A0%81%E5%A4%87%E4%BB%BD%E4%BB%93%E5%BA%93%E6%88%96%E5%88%86%E6%94%AF"><span class="toc-text">同上，创建源码备份仓库或分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">插件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E8%BF%98%E5%8E%9F%E6%BA%90%E7%A0%81-1"><span class="toc-text">新电脑上还原源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD-1"><span class="toc-text">结束语</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-10_Hexo博客源码备份" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">Hexo博客源码备份</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.05.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 814
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 3分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">2020-07-04更新，原先为Git命令进行备份，现增加插件备份的方法。</div>
+
+<p>其实以下两种方法的原理是相同的，看个人喜好选择即可。</p>
+<h2 id="Git命令进行备份"><a href="#Git命令进行备份" class="headerlink" title="Git命令进行备份"></a>Git命令进行备份</h2><h3 id="创建源码备份仓库或分支"><a href="#创建源码备份仓库或分支" class="headerlink" title="创建源码备份仓库或分支"></a>创建源码备份仓库或分支</h3><p>在Gitub上新建一个存放源码的仓库，或者创建一个分支。</p>
+<h3 id="删除必要文件"><a href="#删除必要文件" class="headerlink" title="删除必要文件"></a>删除必要文件</h3><p>删除博客主题下的<code>.git</code>,<code>.github</code>,<code>.gitignore</code>文件；保留根目录下的<code>.gitignore</code>，并把其文件修改为</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="源码备份"><a href="#源码备份" class="headerlink" title="源码备份"></a>源码备份</h3><p>在本地博客根目录下打开<strong>GitBash</strong>依次执行命令</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ git init                   # 将blog作为一个git仓库进行初始化</span><br><span class="line">$ git checkout -b backup     # 创建/切换本地backup分支</span><br><span class="line">$ git add .                  # 将文件添加到暂存区  </span><br><span class="line">$ git commit -m &quot;提交说明&quot;    # 将暂存区文件提交到本地仓库</span><br><span class="line">$ git remote add origin git@github.com:Senorui/Blog.git  # 添加远程仓库or分支地址</span><br><span class="line">$ git push origin backup     # 将本地仓库推送至远程仓库</span><br></pre></td></tr></table></figure>
+
+<p>更新源码备份，则执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push --force origin backup</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="新电脑上还原源码"><a href="#新电脑上还原源码" class="headerlink" title="新电脑上还原源码"></a>新电脑上还原源码</h3><h4 id="安装好Git和nodejs"><a href="#安装好Git和nodejs" class="headerlink" title="安装好Git和nodejs"></a>安装好Git和nodejs</h4><h4 id="克隆源码到本地"><a href="#克隆源码到本地" class="headerlink" title="克隆源码到本地"></a>克隆源码到本地</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone -b backup git@github.com:Senorui/Blog.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="还原hexo环境"><a href="#还原hexo环境" class="headerlink" title="还原hexo环境"></a>还原hexo环境</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd Blog                       # 进入Blog文件夹</span><br><span class="line">$ npm install hexo --save       # 安装hexo</span><br><span class="line">$ npm install hexo-cli -g       # 安装hexo命令行模式</span><br><span class="line">$ npm install                   # 安装所有依赖并自动安装之前安装过的插件</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置Git环境和新SSH"><a href="#配置Git环境和新SSH" class="headerlink" title="配置Git环境和新SSH"></a>配置Git环境和新SSH</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;你要设置的名字&quot;</span><br><span class="line">$ git config --global user.email &quot;你要设置的邮箱&quot;</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;你刚刚设置的邮箱&quot;</span><br><span class="line">$ cd ~/.ssh             # 进入虚拟目录ssh文件中</span><br><span class="line">$ cat id_rsa.pub        # 显示id_rsa.pub文件内容</span><br></pre></td></tr></table></figure>
+
+<p>验证是否配置成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com </span><br></pre></td></tr></table></figure>
+
+<p>当看到上面设置的名字即为成功。</p>
+<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><p>和在原电脑上一样操作即可</p>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>为方便部署文章和备份源码，可写一个名为<code>deploy.sh</code>的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">git init</span><br><span class="line">git checkout -b backup</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;源码更新&quot;</span><br><span class="line">git remote add origin git@github.com:Senorui/Blog.git</span><br><span class="line">git push origin backup</span><br></pre></td></tr></table></figure>
+
+<p>部署文章和备份源码时直接输入以下命令即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="hexo-git-backup插件备份"><a href="#hexo-git-backup插件备份" class="headerlink" title="hexo-git-backup插件备份"></a>hexo-git-backup插件备份</h2><div class="note warning">其方便一点的是可以备份主题文件，而上一种方法我每次备份都不成功！！</div>
+
+<p>【<strong>插件地址</strong>】: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a></p>
+<h3 id="同上，创建源码备份仓库或分支"><a href="#同上，创建源码备份仓库或分支" class="headerlink" title="同上，创建源码备份仓库或分支"></a>同上，创建源码备份仓库或分支</h3><h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>Hexo的2.x与3.x版本此插件不通用，所以要对应安装</p>
+<p>如果你的 Hexo 版本是 2.x.x，则使用以下命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-git-backup@0.0.91 --save</span><br></pre></td></tr></table></figure>
+
+<p>如果你的 Hexo 版本是 3.x.x，则使用以下命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-git-backup --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h3><p>在博客根目录下的 <code>_config.yml</code> 文件中配置插件，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">    type: git</span><br><span class="line">    theme: fexo #主题名</span><br><span class="line">    message: 新文章发表 #备份说明</span><br><span class="line">    repository:</span><br><span class="line">       github: git@github.com:Senorui/Blog.git,Blog   </span><br></pre></td></tr></table></figure>
+
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>运行一下命令即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo backup &amp; hexo b</span><br></pre></td></tr></table></figure>
+
+<h3 id="新电脑上还原源码-1"><a href="#新电脑上还原源码-1" class="headerlink" title="新电脑上还原源码"></a>新电脑上还原源码</h3><p>同上！！！</p>
+<h3 id="结束语-1"><a href="#结束语-1" class="headerlink" title="结束语"></a>结束语</h3><p>为方便部署文章和备份源码，同样可写一个名为<code>deploy.sh</code>的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo b</span><br></pre></td></tr></table></figure>
+
+<p>部署文章和备份源码时直接输入以下命令即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/a2b7.html" target="_blank" title="Hexo博客源码备份">
+        https://senorui.top/posts/a2b7.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/3e47.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/21a6.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

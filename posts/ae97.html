@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">让Github上的根、子域名均开启HTTPS | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Github,HTTPS,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="一种简单的方法让托管在Github上的根域名和子级域名网站均开启HTTPS。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让Github上的根、子域名均开启HTTPS">
+<meta property="og:url" content="https://senorui.top/posts/ae97.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="一种简单的方法让托管在Github上的根域名和子级域名网站均开启HTTPS。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/ae97/blog.webp">
+<meta property="og:image" content="https://senorui.top/img/ae97/nav.webp">
+<meta property="og:image" content="https://senorui.top/img/ae97/rblog.webp">
+<meta property="og:image" content="https://senorui.top/img/ae97/navhttps.webp">
+<meta property="og:image" content="https://senorui.top/img/ae97/iohttps.webp">
+<meta property="og:image" content="https://senorui.top/img/ae97/blogg.webp">
+<meta property="article:published_time" content="2020-07-26T23:42:32.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="HTTPS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/ae97/blog.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">食用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-17_Github二级域名开启HTTPS" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">让Github上的根、子域名均开启HTTPS</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.07.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 293
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 1分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><div class="note info">这两天不是搞了个纯静态的浏览器主页导航么？和本博客一样都托管到Github上，也想都开启HTTPS，不过本站已经采用了根域名，导航站只能采用新的子域名，现在托管到Github Pages上且自定义域名的网站均会给自定义域名配置好SSL证书，于是就想给站点都配置SSL证书，但是今天配置导航站子域名的时候，证书申请一直失败。</div>
+
+
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><p>首先关闭Github上已绑定的域名，</p>
+<p><img src="/img/ae97/blog.webp" alt="关闭绑定"></p>
+<p>再去新仓库开启Pages服务并绑定新域名<code>nav.senorui.top</code></p>
+<p>半分钟后即可看到申请成功并显示已启用HTTPS！</p>
+<p><img src="/img/ae97/nav.webp" alt="绑定令一域名"></p>
+<p>回到本站仓库，重新绑定关闭的域名，即域名<code>senorui.top</code></p>
+<p><img src="/img/ae97/rblog.webp" alt="重新绑定域名"></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>最后，根域名和子域名均开启HTTPS。</p>
+<p><img src="/img/ae97/navhttps.webp" alt="导航站开启HTTPS"></p>
+<p><img src="/img/ae97/iohttps.webp" alt="本站Github域名开启HTTPS"></p>
+<p><img src="/img/ae97/blogg.webp" alt="本站自定义域名开启HTTPS"></p>
+<p><strong>注： 由于本站使用CDN加速，且在CDN服务商处另有SSL证书，所以上图中本站域名<code>senorui.top</code>SSL证书与<code>senorui.github.io</code>证书不一致，关闭CDN加速后有缓存且会遇到403，这样比较麻烦，就不去一一验证了。</strong></p>
+<p>以上，大功告成！！！</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/ae97.html" target="_blank" title="让Github上的根、子域名均开启HTTPS">
+        https://senorui.top/posts/ae97.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/24e3.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/359e.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

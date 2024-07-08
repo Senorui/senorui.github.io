@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">小黑屋与权限狗掌控你的APP权限 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="小黑屋,权限狗,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="基于小黑屋管理员模式下的权限狗的国内安卓APP的权限管理，让你掌控你的APP权限！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小黑屋与权限狗掌控你的APP权限">
+<meta property="og:url" content="https://senorui.top/posts/b963.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="基于小黑屋管理员模式下的权限狗的国内安卓APP的权限管理，让你掌控你的APP权限！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/b963/xhw.webp">
+<meta property="og:image" content="https://senorui.top/img/b963/qxg.webp">
+<meta property="og:image" content="https://senorui.top/img/b963/qxgg.webp">
+<meta property="article:published_time" content="2021-05-01T18:28:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="小黑屋">
+<meta property="article:tag" content="权限狗">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/b963/xhw.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98%E5%BA%94%E7%94%A8"><span class="toc-text">设备管理员应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%BF%80%E6%B4%BB"><span class="toc-text">二维码激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E6%BF%80%E6%B4%BB"><span class="toc-text">一键激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adb%E6%BF%80%E6%B4%BB"><span class="toc-text">Adb激活</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E6%9D%83%E9%99%90%E7%8B%97"><span class="toc-text">激活权限狗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-text">权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">各软件下载</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-50_小黑屋与权限狗管理APP权限" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">小黑屋与权限狗掌控你的APP权限</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2021.05.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 891
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 3分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+基于小黑屋管理员模式下权限狗的国内安卓APP的权限管理，让你掌控你的APP权限！</div>
+
+<div class="note danger">前排提示: 玩机有风险，请搞明白再进行操作。你的个人操作所导致的一切后果与本文无关！</div>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>所需工具：</p>
+<ul>
+<li>Adb - Android 调试桥 (adb) 是一种功能多样的命令行工具，可让您与设备进行通信。</li>
+<li>小黑屋 - 小黑屋，一键冻结不常用的应用程序，还您一个倍加流畅的手机。</li>
+<li>权限狗 - 无需 Root 管理应用权限(AppOps)。</li>
+</ul>
+<p>首先<strong>备份好你的个人资料</strong>，并取出SIM卡，开启开发者模式，并删除手机上所有用户设置和用户账号！</p>
+<p>目前我使用的华为系手机需要<strong>登录华为账号</strong>才能开启USB调试，那就登录上华为账号开启USB调试后再退出登录。</p>
+<h2 id="设备管理员应用"><a href="#设备管理员应用" class="headerlink" title="设备管理员应用"></a>设备管理员应用</h2><p>从Android 9 开始，设备管理员可以修改appops的设定，而一台设备只能设置一个设备管理员，所以APP Ops可以使用其他设备管理员的提供的API来管理设备上APP的权限。</p>
+<p>综上，需要为手机设置一个设备管理员应用，而小黑屋就是那个应用。</p>
+<p><img src="/img/b963/xhw.webp" alt="1"></p>
+<h3 id="二维码激活"><a href="#二维码激活" class="headerlink" title="二维码激活"></a>二维码激活</h3><p>适合身边没有电脑或新手，且手机方便恢复出厂设置的用户，可以选择直接使用官方提供的二维码激活。</p>
+<p>具体操作见官方文档: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://https.vc/archives/234/">https://https.vc/archives/234/</a></p>
+<h3 id="一键激活"><a href="#一键激活" class="headerlink" title="一键激活"></a>一键激活</h3><p>应用官方的一键激活工具激活，一键激活无需繁琐操作，无需Adb命令。</p>
+<p>一键激活方法见官方文档: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://https.vc/archives/220/">https://https.vc/archives/220/</a></p>
+<h3 id="Adb激活"><a href="#Adb激活" class="headerlink" title="Adb激活"></a>Adb激活</h3><p>手机开发者模式下USB连接电脑使用adb命令激活，适合有一定相关知识的使用者。</p>
+<p>在Adb包目录下，<code>shift+右键</code>选择<code>在此处打开powershell窗口</code>，运行以下命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.\adb shell dpm set-device-owner web1n.stopapp/.receiver.AdminReceiver</span><br></pre></td></tr></table></figure>
+
+<p>若您使用CMD或其他终端可能不需要前面的<code>.\</code>。</p>
+<p>也可以使用Adb在线执行器激活: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://adb.http.gs/">https://adb.http.gs</a></p>
+<h2 id="激活权限狗"><a href="#激活权限狗" class="headerlink" title="激活权限狗"></a>激活权限狗</h2><p>权限狗有三种运行模式，已激活小黑屋的设备管理员提供的API来运行、Root模式下运行和通过Adb命令来运行。</p>
+<p><img src="/img/b963/qxg.webp" alt="2"></p>
+<p>我使用的是基于激活设备管理员的小黑屋下来运行权限狗，同上用adb命令授予权限狗管理APP权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.\adb shell pm grant com.web1n.permissiondog android.permission.GET_APP_OPS_STATS</span><br></pre></td></tr></table></figure>
+
+<p>若仅需Adb命令来运行权限狗，则用命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.\adb shell sh /storage/emulated/0/Android/data/com.web1n.permissiondog/files/starter.sh</span><br></pre></td></tr></table></figure>
+
+<p>另，权限管理软件还可选择APP Ops，不过权限狗同属小黑屋的开发者，与小黑屋协同使用较方便。</p>
+<p>其使用文档见： <a target="_blank" rel="external nofollow noopener noreferrer" href="https://appops.rikka.app/zh-hans/guide/working_mode/dpm/#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">https://appops.rikka.app/zh-hans/guide/working_mode/dpm/#如何使用</a></p>
+<h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><ul>
+<li>支持无 Root 管理 AppOps 设置。</li>
+<li>如果设备有 Root，那么也可以尝试使用更加快速的 Root 模式；权限狗可能是世界上第二快的 AppOps 管理软件。</li>
+<li>权限模板功能，一键拒绝应用的某些特定权限。</li>
+</ul>
+<p>其可以使用自定义权限模板，一键套用到所有应用上。其中忽略应用索取权限的请求，发送空白数据。</p>
+<p><img src="/img/b963/qxgg.webp" alt="3"></p>
+<h2 id="各软件下载"><a href="#各软件下载" class="headerlink" title="各软件下载"></a>各软件下载</h2><blockquote>
+<p>Adb包: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://developer.android.com/studio/releases/platform-tools#downloads">https://developer.android.com/studio/releases/platform-tools#downloads</a><br>小黑屋: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.coolapk.com/apk/web1n.stopapp">https://www.coolapk.com/apk/web1n.stopapp</a><br>权限狗: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.coolapk.com/apk/com.web1n.permissiondog">https://www.coolapk.com/apk/com.web1n.permissiondog</a><br>APP Ops: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://appops.rikka.app/zh-hans/download/">https://appops.rikka.app/zh-hans/download/</a></p>
+</blockquote>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/b963.html" target="_blank" title="小黑屋与权限狗掌控你的APP权限">
+        https://senorui.top/posts/b963.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/cd75.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/ba7.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

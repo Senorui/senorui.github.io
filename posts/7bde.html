@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">Valine评论系统的安装使用以及美化 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,Valine,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="Valine评论系统的安装使用及美化；包括增加评论和回复的邮件提醒、表情包库、评论框样式美化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Valine评论系统的安装使用以及美化">
+<meta property="og:url" content="https://senorui.top/posts/7bde.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="Valine评论系统的安装使用及美化；包括增加评论和回复的邮件提醒、表情包库、评论框样式美化。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/7bde/true.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/addvl.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/addAPP.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/IK.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/adden.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/webd.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/yunhost.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/yunhost1.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/yunhost2.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/yunhosta.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/text.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/texta.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/mailmod.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/mft.webp">
+<meta property="og:image" content="https://senorui.top/img/7bde/last.webp">
+<meta property="article:published_time" content="2020-08-07T18:14:22.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="Valine">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/7bde/true.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Valine"><span class="toc-text">安装Valine</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%B7%B2%E9%9B%86%E6%88%90Valine"><span class="toc-text">主题已集成Valine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E6%9C%AA%E9%9B%86%E6%88%90Valine"><span class="toc-text">主题未集成Valine</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8"><span class="toc-text">配置使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96appid%E5%92%8Cappkey"><span class="toc-text">获取appid和appkey</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2"><span class="toc-text">快速部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8Cweb%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE"><span class="toc-text">环境变量和web域名设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E5%BC%95%E6%93%8E%E9%83%A8%E7%BD%B2"><span class="toc-text">云引擎部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E7%BE%8E%E5%8C%96"><span class="toc-text">评论美化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%83%85%E5%8C%85"><span class="toc-text">表情包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E6%A1%86%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-text">评论框背景图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E4%B8%BB%E3%80%81%E5%B0%8F%E4%BC%99%E4%BC%B4%E3%80%81%E8%AE%BF%E5%AE%A2%E6%A0%87%E8%AF%86"><span class="toc-text">博主、小伙伴、访客标识</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="toc-text">结束</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-19_Valine评论系统的安装与美化" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">Valine评论系统的安装使用以及美化</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.08.07</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.6k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 7分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">博客也运行了这么久，还是弄个评论系统吧</div>
+
+<p>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://valine.js.org/"><strong>Valine</strong></a>】: 一种快速，简洁且高效的无预设评论系统。</p>
+<p>Valine诞生于2017年8月7日，是一种基于LeanCloud的快速，简洁且高效的无标题评论系统。</p>
+<p>理论上支持但不限于静态博客，目前已有Hexo，Jekyll，Typecho，Hugo，Ghost等博客程序在使用Valine</p>
+<h2 id="安装Valine"><a href="#安装Valine" class="headerlink" title="安装Valine"></a>安装Valine</h2><h3 id="主题已集成Valine"><a href="#主题已集成Valine" class="headerlink" title="主题已集成Valine"></a>主题已集成Valine</h3><p>PS: 不过目前大多数主题都已集成Valine</p>
+<p>在主题根目录下的配置文件<code>-config.yml</code>文件中启用Valine</p>
+<p><img src="/img/7bde/true.webp" alt="true"></p>
+<p>并在配置项里填入<code>appid</code>和<code>appkey</code>的值即可</p>
+<p><strong><div class="note primary">关于如何获取这两值后文会说到，若您主题已经集成此评论可直接右边目录跳转【配置与使用】阅读。</div></strong></p>
+<h3 id="主题未集成Valine"><a href="#主题未集成Valine" class="headerlink" title="主题未集成Valine"></a>主题未集成Valine</h3><p>在主题目录<code>_partial</code>下新建<code>valine.ejs</code>文件，有的可能需要新建在<code>_partial/component/</code>或者<code>_partial/post/</code>下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;vcomment&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;comment&quot;</span>&gt;&lt;/div&gt; </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//unpkg.com/valine/dist/Valine.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">   <span class="keyword">var</span> notify = <span class="string">&#x27;&lt;%= theme.valine.notify %&gt;&#x27;</span> == <span class="literal">true</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">   <span class="keyword">var</span> verify = <span class="string">&#x27;&lt;%= theme.valine.verify %&gt;&#x27;</span> == <span class="literal">true</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">new</span> <span class="title class_">Valine</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">el</span>: <span class="string">&#x27;.comment&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">notify</span>: notify,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">verify</span>: verify,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">app_id</span>: <span class="string">&quot;&lt;%= theme.valine.appid %&gt;&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">app_key</span>: <span class="string">&quot;&lt;%= theme.valine.appkey %&gt;&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">placeholder</span>: <span class="string">&quot;&lt;%= theme.valine.placeholder %&gt;&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">avatar</span>:<span class="string">&quot;&lt;%= theme.valine.avatar %&gt;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>comments.ejs</code>文件的<code>&lt;/div&gt;</code>前新增</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;%- partial(&#x27;valine&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/7bde/addvl.webp" alt="addvl"></p>
+<p>没有此文件则新建一个，写入如下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;comments &lt;%= className %&gt;&quot;&gt;</span><br><span class="line">  &lt;%- partial(&#x27;valine&#x27;) %&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>再在<code>layout.ejs</code>中<code>&lt;/body&gt;</code>之前引入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.post.showComments &amp;&amp; page.layout === &#x27;post&#x27;)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_partial/component/comments&#x27;, &#123;className: &#x27;comments-post&#x27;&#125;) %&gt;</span><br><span class="line">&lt;% &#125; else if (page.comments) &#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;_partial/component/comments&#x27;, &#123;className: &#x27;comments-&#x27; + page.layout&#125;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>完成以上，再到主题配置文件<code>-config.yml</code>下引入配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true # false关闭Valine</span><br><span class="line">  appid:  # your leancloud application appid</span><br><span class="line">  appkey:  # your leancloud application appkey</span><br><span class="line">  admin_email: </span><br><span class="line">  notify:true, </span><br><span class="line">  verify:false, </span><br><span class="line">  placeholder: (｡･∀･)ﾉﾞ嗨！欢迎评论呀！ # comment box placeholder</span><br><span class="line">  avatar: monsterid # gravatar style</span><br><span class="line">  guest_info: nick,mail,link # custom comment header</span><br><span class="line">  pageSize: 10 # pagination size</span><br></pre></td></tr></table></figure>
+
+<p><strong><div class="note danger">注：有的主题<code>comments.ejs</code>的代码可能要引入到<code>article.ejs</code>或者<code>post.ejs</code>中去，即不需要建<code>comments.ejs</code>文件。</div></strong></p>
+<h2 id="配置使用"><a href="#配置使用" class="headerlink" title="配置使用"></a>配置使用</h2><h3 id="获取appid和appkey"><a href="#获取appid和appkey" class="headerlink" title="获取appid和appkey"></a>获取<code>appid</code>和<code>appkey</code></h3><p>由于其是基于LeanCloud的无后端的评论系统，所以我们需要去注册<strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://leancloud.cn/dashboard/login.html#/signup">LeanCloud</a>】</strong>获取<code>appid</code>和<code>appkey</code>。</p>
+<p>注册账号后即可创建一个应用</p>
+<p>若使用国内版需要邮箱激活，并且实名认证，推荐使用国际版。</p>
+<p><img src="/img/7bde/addAPP.webp" alt="addAPP"></p>
+<p>进入刚刚创建的应用→设置→选择应用 Keys，即可能看到<code>AppID</code>和<code>AppKey</code></p>
+<p><img src="/img/7bde/IK.webp" alt="I&amp;K"></p>
+<h3 id="快速部署"><a href="#快速部署" class="headerlink" title="快速部署"></a>快速部署</h3><p>原版的Valine并不能满足我的需求，而<strong>Valine Admin</strong> 是 Valine 评论系统的扩展和增强，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能。</p>
+<p>所以使用的是 <strong>DesertsP</strong>大佬的<strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/DesertsP/Valine-Admin">Valine-Admin</a>】</strong>！</p>
+<h4 id="环境变量和web域名设置"><a href="#环境变量和web域名设置" class="headerlink" title="环境变量和web域名设置"></a>环境变量和web域名设置</h4><p>在刚刚创建的应用后台→云引擎→设置，添加环境变量以及web域名</p>
+<p><img src="/img/7bde/adden.webp" alt="adden"></p>
+<p>环境变量参数说明，除可选外其余为必填项，以下变量一定要保证正确!!!</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SITE_NAME</td>
+<td>Senorui’s Blog</td>
+<td>站点名称</td>
+</tr>
+<tr>
+<td>SITE_URL</td>
+<td><a href="https://senorui.top/">https://senorui.top</a></td>
+<td>站点地址</td>
+</tr>
+<tr>
+<td>SMTP_USER</td>
+<td><a href="mailto:&#120;&#120;&#x78;&#120;&#x40;&#115;&#101;&#110;&#111;&#114;&#117;&#x69;&#46;&#x63;&#111;&#109;">&#120;&#120;&#x78;&#120;&#x40;&#115;&#101;&#110;&#111;&#114;&#117;&#x69;&#46;&#x63;&#111;&#109;</a></td>
+<td>SMTP登录用户</td>
+</tr>
+<tr>
+<td>SMTP_PASS</td>
+<td>xxxxxx</td>
+<td>SMTP登陆密码</td>
+</tr>
+<tr>
+<td>SMTP_SERVICE</td>
+<td>Yandex</td>
+<td>邮件服务提供商，支持QQ、163、126、Gmail以及<a target="_blank" rel="external nofollow noopener noreferrer" href="https://nodemailer.com/smtp/well-known/#supported-services">更多</a></td>
+</tr>
+<tr>
+<td>SENDER_NAME</td>
+<td>Senorui</td>
+<td>收件人</td>
+</tr>
+<tr>
+<td>SENDER_EMAIL</td>
+<td><a href="mailto:&#x78;&#120;&#120;&#120;&#x40;&#115;&#x65;&#x6e;&#x6f;&#114;&#117;&#x69;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#120;&#x40;&#115;&#x65;&#x6e;&#x6f;&#114;&#117;&#x69;&#46;&#x63;&#111;&#x6d;</a></td>
+<td>发件邮箱</td>
+</tr>
+<tr>
+<td>AKISMET_KEY</td>
+<td>xxxxxxxxxxxx</td>
+<td>（可选）Akismet Key 用于垃圾评论检测，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://akismet.com/">注册</a></td>
+</tr>
+<tr>
+<td>TEMPLATE_NAME</td>
+<td>default</td>
+<td>邮件主题，default &amp; rainbown两种</td>
+</tr>
+</tbody></table>
+<p>在应用后台，设置→安全中心→Web 安全域名，设置使用域名即可</p>
+<p><img src="/img/7bde/webd.webp" alt="webd"></p>
+<h4 id="云引擎部署"><a href="#云引擎部署" class="headerlink" title="云引擎部署"></a>云引擎部署</h4><p>在应用后台，部署→部署项目→Git部署，填写Git地址<code>https://github.com/DesertsP/Valine-Admin.git</code>，分支选择master，点击部署即可。</p>
+<p><img src="/img/7bde/yunhost.webp" alt="yunhost"></p>
+<p><img src="/img/7bde/yunhost1.webp" alt="yunhost"></p>
+<p><img src="/img/7bde/yunhost2.webp" alt="yunhost"></p>
+<p><img src="/img/7bde/yunhosta.webp" alt="yunhost"></p>
+<p>测试以下邮件通知是否正常</p>
+<p><img src="/img/7bde/text.webp" alt="text"></p>
+<p>测试正常，邮箱能正常收到评论通知，OVER!!!</p>
+<p><img src="/img/7bde/texta.webp" alt="text"></p>
+<p>在应用后台，设置→邮件模板处添加邮件模板，保证网站访问者和站长均能收到回复的邮件。</p>
+<p>主题名</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">(｡･∀･)ﾉﾞ嗨！你在&#123;&#123;appname&#125;&#125;的文章收到了新的评论</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/7bde/mailmod.webp" alt="mailmod"></p>
+<p>内容：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;Hi, &#123;&#123;username&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href=&quot;站点首页地址&quot; style=&quot;display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;&quot;&gt;马上查看&lt;/a&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<div class="note danger">注意： 做出以上配置信息修改后最好重启或者重新部署一下，以保证配置生效。</div>
+
+
+
+<h2 id="评论美化"><a href="#评论美化" class="headerlink" title="评论美化"></a>评论美化</h2><p>(∪.∪ )…zzz</p>
+<p>如何美化！超小白的我也是参考了大佬的博文，对本站主题进行了一点点点点的适配。</p>
+<blockquote>
+<p><strong>【博客Valine评论样式美化】:</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://bestzuo.cn/posts/763113948.html">https://bestzuo.cn/posts/763113948.html</a></p>
+</blockquote>
+<p><strong>在此感谢大佬的分享！！！</strong></p>
+<h3 id="表情包"><a href="#表情包" class="headerlink" title="表情包"></a>表情包</h3><p>官方的1.4+版本的Valine已经支持自定义表情包，可参阅<strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://valine.js.org/emoji.html">官方文档</a>】</strong></p>
+<p>大佬的JS里已经集成了众多的表情包，直接使用即可</p>
+<h3 id="评论框背景图片"><a href="#评论框背景图片" class="headerlink" title="评论框背景图片"></a>评论框背景图片</h3><p>在博客CSS文件里加入评论样式代码即可</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#veditor</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp</span>); <span class="comment">/* 修改自己喜欢的图片链接即可 */</span></span><br><span class="line">    <span class="attribute">background-size</span>: contain;</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">    <span class="attribute">background-position</span>: right;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">resize</span>: vertical</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 防止图片遮住输入框文字 */</span></span><br><span class="line"><span class="selector-id">#veditor</span><span class="selector-pseudo">:focus</span>&#123;</span><br><span class="line">  <span class="attribute">background-position</span>-<span class="attribute">y</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.2s</span> ease-in-out <span class="number">0s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>让评论头像有动态性，给添加头像图片旋转效果</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 头像图片旋转效果 */</span></span><br><span class="line"><span class="selector-tag">img</span><span class="selector-class">.vimg</span> &#123;</span><br><span class="line">     <span class="attribute">transition</span>: all <span class="number">1s</span>   <span class="comment">/* 旋转时间为 1s */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">img</span><span class="selector-class">.vimg</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">     <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">     -webkit-<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">     -moz-<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">     -o-<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">     -ms-<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="博主、小伙伴、访客标识"><a href="#博主、小伙伴、访客标识" class="headerlink" title="博主、小伙伴、访客标识"></a>博主、小伙伴、访客标识</h3><p>这个要魔改的Valine才支持，此魔改版支持</p>
+<ol>
+<li><p>添加博主，小伙伴，访客标签</p>
+</li>
+<li><p>添加浏览器和操作系统图标，需引入 fontawesome v5.0+ 的 CSS 样式</p>
+</li>
+<li><p>邮箱检测更严格（配合AKISMET效果更佳）</p>
+</li>
+<li><p>增加 QQ 邮箱识别并拉取QQ头像</p>
+</li>
+<li><p>可自定义meta placeholder </p>
+</li>
+</ol>
+<p>用法挺简单的，只需在<code>Valine.min.js</code>文件的<code>master</code>、<code>friends</code>下填写需要添加<strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.sojson.com/encrypt_md5.html">MD5加密后</a>】</strong>的邮箱账号即可。</p>
+<p>如下图，多个账号以数组形式添加即可。</p>
+<p><img src="/img/7bde/mft.webp" alt="mft"></p>
+<p>效果如图</p>
+<p><img src="/img/7bde/last.webp" alt="last"></p>
+<p><strong>【附下载】:</strong> <a href="/js/Valine.min.js">Valine.min.js</a></p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>至此，Valine评论系统已趋向于完美。</p>
+<p>在此再次感谢的大佬的分享！！！</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/7bde.html" target="_blank" title="Valine评论系统的安装使用以及美化">
+        https://senorui.top/posts/7bde.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/359e.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/e682.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

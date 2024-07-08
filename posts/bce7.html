@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">Hexo博客适配并支持PWA | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,PWA,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="主动让Hexo博客支持并适配渐进式网页应用，即支持PWA。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客适配并支持PWA">
+<meta property="og:url" content="https://senorui.top/posts/bce7.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="主动让Hexo博客支持并适配渐进式网页应用，即支持PWA。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/bce7/Test.webp">
+<meta property="og:image" content="https://senorui.top/img/bce7/PWA.webp">
+<meta property="og:image" content="https://senorui.top/img/bce7/PWAa.webp">
+<meta property="article:published_time" content="2020-11-20T10:02:02.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="PWA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/bce7/Test.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-PWA"><span class="toc-text">What PWA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6"><span class="toc-text">配置清单文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEService-Worker"><span class="toc-text">配置Service Worker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95PWA"><span class="toc-text">测试PWA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85PWA"><span class="toc-text">安装PWA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-39_Hexo适配并支持PWA" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">Hexo博客适配并支持PWA</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.11.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.1k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 5分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+
+<p>PWA（Progressive Web App）是一种理念，使用多种技术来增强web app的功能，可以让网站的体验变得更好，能够模拟一些原生功能，比如通知推送。</p>
+<p>在移动端可以利用标准化框架，让网页应用呈现和原生应用相似的体验。</p></div><p></p>
+<h2 id="What-PWA"><a href="#What-PWA" class="headerlink" title="What PWA"></a>What PWA</h2><p>总的来说 <strong>PWA</strong> 不是特指某一项技术，而是应用了多项技术的 <strong>Web App</strong>。</p>
+<p>其核心技术包括 <strong>App Manifest</strong>、<strong>Service Worker</strong>、<strong>Web Push</strong>等等。</p>
+<p><strong>Web APP与传统 Native APP的区别：</strong> </p>
+<ul>
+<li>可安装性，无论手机可直接安装到桌面用户，更强的用户黏性。</li>
+<li>可链接访问</li>
+<li>可索引性，搜索引擎可索引其内容。</li>
+<li>可离线访问，更好的浏览体验。</li>
+</ul>
+<p>Hexo上是有插件可以直接支持PWA的，但是插件并不适配Hexo 5.2.0，只支持到Hexo 4.2.0之前的版本。</p>
+<p>现通过非插件的方法让Hexo博客支持 <strong>PWA</strong>。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先，需要全站开启 <strong>HTTPS</strong>，因为 <strong>PWA</strong>仅仅支持 <strong>HTTPS</strong>站点。</p>
+<p>另，准备好各种分辨率的图标一套，48x48、96x96、144x144、192x192、512x512等分辨率的图标。</p>
+<h2 id="配置清单文件"><a href="#配置清单文件" class="headerlink" title="配置清单文件"></a>配置清单文件</h2><p>配置站点清单文件 <code>manifest.json</code> or <code>site.webmanifest</code></p>
+<p>内容如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;lang&quot;</span><span class="punctuation">:</span> <span class="string">&quot;zh-CN&quot;</span><span class="punctuation">,</span>                                   <span class="comment">//站点语言</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;睿先森&quot;</span><span class="punctuation">,</span>                                  <span class="comment">//站点名称</span></span><br><span class="line">    <span class="attr">&quot;short_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;睿先森&quot;</span><span class="punctuation">,</span>                            <span class="comment">//站点短名称</span></span><br><span class="line">    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;这是一个睿先森(Senorui)记录和分享生活中所学、所思和所悟的小破站。&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;theme_color&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#abd7ff&quot;</span><span class="punctuation">,</span>                          <span class="comment">//应用主题颜色</span></span><br><span class="line">    <span class="attr">&quot;background_color&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#abd7ff&quot;</span><span class="punctuation">,</span>                     <span class="comment">//应用开屏背景颜色</span></span><br><span class="line">    <span class="attr">&quot;start_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/&quot;</span><span class="punctuation">,</span>                                  <span class="comment">//应用开屏页面</span></span><br><span class="line">    <span class="attr">&quot;Scope&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/&quot;</span><span class="punctuation">,</span>                                      <span class="comment">//manifest.json的作用域</span></span><br><span class="line">    <span class="attr">&quot;display&quot;</span><span class="punctuation">:</span> <span class="string">&quot;standalone&quot;</span><span class="punctuation">,</span>                            <span class="comment">//应用显示模式</span></span><br><span class="line">    <span class="attr">&quot;orientation&quot;</span><span class="punctuation">:</span> <span class="string">&quot;any&quot;</span><span class="punctuation">,</span>                               <span class="comment">//应用的默认方向       </span></span><br><span class="line">    <span class="attr">&quot;icons&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span>                                         <span class="comment">//应用图标</span></span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/apple-icon-60x60.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;60x60&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/apple-icon-72x72.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;72x72&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span>   </span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/apple-icon-96x96.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;96x96&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span>     </span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/apple-icon-144x144.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;144x144&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span>    </span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/android-icon-192x192.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192x192&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="punctuation">&#123;</span>        </span><br><span class="line">        <span class="attr">&quot;src&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/icon/android-icon-512x512.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;sizes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;512x512&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>将APP清单文件放在博客根目录下，并在<code>&lt;/head&gt;</code>前引入。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;manifest&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/site.webmanifest&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;manifest&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/manifest.json&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置Service-Worker"><a href="#配置Service-Worker" class="headerlink" title="配置Service Worker"></a>配置Service Worker</h2><p><strong>Service Worker</strong>让 <strong>PWA</strong>拥有离线缓存的能力，这样即使在无网络的情况下也可以继续浏览文章，大大地增强了访客对站点的浏览体验。</p>
+<p>那么就需要在根目录下新建文件<code>sw.js</code></p>
+<p>以下为一份很简单的 <strong>Service Worker</strong>文件，非科班的博主也不太懂怎么写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> version = <span class="string">&#x27;offline-cache-v1&#x27;</span></span><br><span class="line"></span><br><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;install&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    event.<span class="title function_">waitUntil</span>(self.<span class="title function_">skipWaiting</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;activate&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    event.<span class="title function_">waitUntil</span>(</span><br><span class="line">        <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">            self.<span class="property">clients</span>.<span class="title function_">claim</span>(),</span><br><span class="line">            caches.<span class="title function_">keys</span>().<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">cacheList</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>(</span><br><span class="line">                    cacheList.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">cacheName</span>) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (cacheName !== version) &#123;</span><br><span class="line">                            <span class="keyword">return</span> caches.<span class="title function_">delete</span>(cacheName);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                );</span><br><span class="line">            &#125;)</span><br><span class="line">        ])</span><br><span class="line">    );</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;fetch&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;url is&#x27;</span>, event.<span class="property">request</span>.<span class="property">url</span>)</span><br><span class="line"></span><br><span class="line">    event.<span class="title function_">respondWith</span>(</span><br><span class="line">        caches.<span class="title function_">match</span>(event.<span class="property">request</span>).<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">response</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (response) &#123;</span><br><span class="line">                <span class="keyword">return</span> response;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> request = event.<span class="property">request</span>.<span class="title function_">clone</span>();</span><br><span class="line">            <span class="keyword">return</span> <span class="title function_">fetch</span>(request).<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">httpRes</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!httpRes || httpRes.<span class="property">status</span> !== <span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> httpRes;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> responseClone = httpRes.<span class="title function_">clone</span>();</span><br><span class="line">                caches.<span class="title function_">open</span>(version).<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">cache</span>) &#123;</span><br><span class="line">                    cache.<span class="title function_">put</span>(event.<span class="property">request</span>, responseClone);</span><br><span class="line">                &#125;);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">return</span> httpRes;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line">    );</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再在博客的<code>&lt;/body&gt;</code>前引入 <strong>Service Worker</strong>注册代码。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">if</span> (<span class="string">&#x27;serviceWorker&#x27;</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;load&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">          navigator.<span class="property">serviceWorker</span>.<span class="title function_">register</span>(<span class="string">&#x27;/sw.js&#x27;</span>)</span><br><span class="line">              .<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">registration</span>) &#123;</span><br><span class="line">                  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;sw.js 注册成功&#x27;</span>, registration.<span class="property">scope</span>);</span><br><span class="line">              &#125;)</span><br><span class="line">              .<span class="title function_">catch</span>(<span class="keyword">function</span> (<span class="params">err</span>) &#123;</span><br><span class="line">                  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;sw.js 注册失败 &#x27;</span>, err);</span><br><span class="line">              &#125;);</span><br><span class="line">       &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="测试PWA"><a href="#测试PWA" class="headerlink" title="测试PWA"></a>测试PWA</h2><p>以上配置完成后，<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code>后在浏览器 <strong>Ctrl+shift+I</strong>打开开发工具，在 <strong>Application</strong>即可查看<code>site.webmanifest</code> or <code>manifest.json</code>以及<code>sw.js</code>是否配置正确。</p>
+<p>配置成功后在下方控制台可看到缓存资源的情况。</p>
+<p><img src="/img/bce7/Test.webp" alt="1"></p>
+<h2 id="安装PWA"><a href="#安装PWA" class="headerlink" title="安装PWA"></a>安装PWA</h2><p>当适配成功后，在电脑端浏览器右上角搜索框内会出现一个符号<code>＋</code>，点击即可安装 <strong>PWA</strong>。</p>
+<p><img src="/img/bce7/PWA.webp" alt="2"></p>
+<p>而安卓手机端和平板端的浏览器会直接在底部弹窗提示。</p>
+<p><img src="/img/bce7/PWAa.webp" alt="3"></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p><strong>PWA</strong>更多、更高级的功能，本站还未涉及，等我后续研究。</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/bce7.html" target="_blank" title="Hexo博客适配并支持PWA">
+        https://senorui.top/posts/bce7.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/b58d.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/6bcd.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

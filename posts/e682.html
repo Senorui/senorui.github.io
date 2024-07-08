@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">本站所用插件汇总 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,Hexo插件,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="本站所用插件汇总，以及记录插件功能及其配置方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本站所用插件汇总">
+<meta property="og:url" content="https://senorui.top/posts/e682.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="本站所用插件汇总，以及记录插件功能及其配置方法。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/others/wordcount.webp">
+<meta property="article:published_time" content="2020-08-14T14:14:22.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="Hexo插件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/others/wordcount.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-deployer-git"><span class="toc-text">hexo-deployer-git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-abbrlink"><span class="toc-text">hexo-abbrlink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-addlink-x"><span class="toc-text">hexo-addlink (x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-autonofollow"><span class="toc-text">hexo-autonofollow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-external-link-x"><span class="toc-text">hexo-external-link (x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-generator-feed"><span class="toc-text">hexo-generator-feed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-generator-sitemap"><span class="toc-text">hexo-generator-sitemap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-git-backup"><span class="toc-text">hexo-git-backup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-neat"><span class="toc-text">hexo-neat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-helper-live2d"><span class="toc-text">hexo-helper-live2d</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-image-cloudflare"><span class="toc-text">hexo-image-cloudflare</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-search"><span class="toc-text">hexo-search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-wordcount"><span class="toc-text">hexo-wordcount</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-20_本站插件汇总" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">本站所用插件汇总</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.08.14</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 2.1k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 9分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">
+
+<p>在此将本站所用插件进行一个汇总，并记录插件功能及其配置方法。</p>
+<p>插件安装更新采用 Yarn 包管理器管理。</p>
+<p><strong>在此记录以便不时之需！！！</strong></p></div><p></p>
+<p><strong><span class="inline-tag red">2020-11-04 新增插件 hexo-image-cloudflare，让图片缓存到 Cloudfare 上。</span></strong></p>
+<h2 id="hexo-deployer-git"><a href="#hexo-deployer-git" class="headerlink" title="hexo-deployer-git"></a>hexo-deployer-git</h2><p>必装插件，用于将hexo生成的静态文件提交到Github仓库。</p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>用法:</p>
+<p>修改根目录config.yml文件中的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">-  type: git</span><br><span class="line">   repo:</span><br><span class="line">     github: git@github.com:Senorui/senorui.github.io.git</span><br><span class="line">   branch: master</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="hexo-abbrlink"><a href="#hexo-abbrlink" class="headerlink" title="hexo-abbrlink"></a>hexo-abbrlink</h2><p>此插件可以固定文章链接，使文章URL唯一化，有利于SEO。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/rozbo/hexo-abbrlink">https://github.com/rozbo/hexo-abbrlink</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-abbrlink</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<p>修改根目录config.yml文件中的永久链接为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">permalink: posts/:abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16 # 算法：crc16(default) and crc32</span><br><span class="line">  rep: hex # 进制：dec(default) and hex</span><br><span class="line">&amp;</span><br><span class="line">permalink: posts/:abbrlink.html</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc16 # 算法：crc16(default) and crc32</span><br><span class="line">  rep: hex # 进制：dec(default) and hex</span><br></pre></td></tr></table></figure>
+
+
+<p>alg – Algorithm,rep – Represent参数如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line"></span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="hexo-addlink-x"><a href="#hexo-addlink-x" class="headerlink" title="hexo-addlink (x)"></a>hexo-addlink (x)</h2><p>本插件可以在文章尾部添加当前文章链接，注明版权，有利于SEO。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/acwong00/hexo-addlink">https://github.com/acwong00/hexo-addlink</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-addlink</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<p>根目录config.yml文件中添加</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># 版权信息</span><br><span class="line">addlink:</span><br><span class="line">  before_text: __本文作者__： <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;作者地址（一般为本站地址）&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span>Senorui<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span>__本文地址__： </span><br><span class="line">  after_text: <span class="tag">&lt;<span class="name">br</span>/&gt;</span>__版权声明__： 本博客所有文章除特别声明外，均为原创且采用 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://creativecommons.org/licenses/by/4.0/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;external nofollow noopener noreferrer&quot;</span>&gt;</span>知识共享署名4.0<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 国际许可协议进行许可<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<div class="note danger">
+此插件不适配 Hexo 5.0，作者和声明标题样式会缺失；不排除是我主题不适配！！</div>
+
+
+
+<h2 id="hexo-autonofollow"><a href="#hexo-autonofollow" class="headerlink" title="hexo-autonofollow"></a>hexo-autonofollow</h2><p>为所有外部链接添加<code>rel =“ external nofollow”</code>，并添加<code>target =“ _ blank”</code>使其在新窗口或新标签中打开外部链接，有利于SEO。</p>
+<p>地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/liuzc/hexo-autonofollow">https://github.com/liuzc/hexo-autonofollow</a></p>
+<p>安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-autonofollow</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<p>根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 外链添加nofollow标签</span><br><span class="line">nofollow:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line">    - senorui.top #本站域名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="hexo-external-link-x"><a href="#hexo-external-link-x" class="headerlink" title="hexo-external-link (x)"></a>hexo-external-link (x)</h2><p>跳转外链相关插件。自动为所有html文件中外链的a标签生成对应的属性。 比如设置 <code>target=&#39;_blank&#39;, rel=&#39;external nofollow noopener noreferrer&#39; </code>告诉搜索引擎这是外部链接,不要将该链接计入权重。 同时自动生成外链跳转页面,默认在根目录下go.html;</p>
+<p>插件地址： <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/hvnobug/hexo-external-link">https://github.com/hvnobug/hexo-external-link</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-external-link</span><br></pre></td></tr></table></figure>
+
+<p>使用:</p>
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 外链跳转</span><br><span class="line">hexo_external_link:</span><br><span class="line">  enable: true</span><br><span class="line">  enable_base64_encode: false</span><br><span class="line">  url_param_name: &#x27;url&#x27;</span><br><span class="line">  html_file_name: &#x27;go.html&#x27;</span><br><span class="line">  target_blank: true</span><br><span class="line">  link_rel: &#x27;external nofollow noopener noreferrer&#x27;</span><br><span class="line">  domain: &#x27;&#x27; # 如果开启了防盗链，填写你的域名</span><br><span class="line">  safety_chain: true</span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="center">变量</th>
+<th align="center">默认</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">enable</td>
+<td align="center">false</td>
+<td align="left">是否开启本插件</td>
+</tr>
+<tr>
+<td align="center">enable_base64_encode</td>
+<td align="center">false</td>
+<td align="left">是否对跳转url使用base64编码</td>
+</tr>
+<tr>
+<td align="center">url_param_name</td>
+<td align="center">u</td>
+<td align="left">url参数名,在跳转到外链传递给html_file_name的参数名</td>
+</tr>
+<tr>
+<td align="center">html_file_name</td>
+<td align="center">go.html</td>
+<td align="left">跳转到外链的页面文件路径</td>
+</tr>
+<tr>
+<td align="center">target_blank</td>
+<td align="center">true</td>
+<td align="left">是否为外链的a标签添加<code>target=&#39;_blank&#39;</code></td>
+</tr>
+<tr>
+<td align="center">link_rel</td>
+<td align="center">external nofollow noopener noreferrer</td>
+<td align="left">设置外链的a标签的rel属性</td>
+</tr>
+<tr>
+<td align="center">domain</td>
+<td align="center">window.location.host 或者为空</td>
+<td align="left">如果开启了防盗链,除了 localhost 和 domain 之外调用会跳到主页,同时也是判断链接是否为外链的依据</td>
+</tr>
+<tr>
+<td align="center">safety_chain</td>
+<td align="center">true</td>
+<td align="left">go.html 为了防止外链盗用 对域名进行的判断</td>
+</tr>
+</tbody></table>
+<h2 id="hexo-generator-feed"><a href="#hexo-generator-feed" class="headerlink" title="hexo-generator-feed"></a>hexo-generator-feed</h2><p>为hexo博客添加RSS订阅功能</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/hexojs/hexo-generator-feed">https://github.com/hexojs/hexo-generator-feed</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>使用：</p>
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br><span class="line">  content_limit: 140</span><br><span class="line">  content_limit_delim: &#x27; &#x27;</span><br><span class="line">  order_by: -date</span><br><span class="line">  icon: icon.png</span><br><span class="line">  autodiscovery: true</span><br><span class="line">  template:</span><br></pre></td></tr></table></figure>
+
+<p>集成RSS订阅功能的主题，直接安装此插件，在主题配置文件中修改RSS链接为 <code>/atom.xml</code> 即可，无需在根目录下配置。</p>
+<h2 id="hexo-generator-sitemap"><a href="#hexo-generator-sitemap" class="headerlink" title="hexo-generator-sitemap"></a>hexo-generator-sitemap</h2><p>为hexo博客添加站点地图文件<code>sitemap</code></p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/hexojs/hexo-generator-sitemap">https://github.com/hexojs/hexo-generator-sitemap</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+
+<p>使用:</p>
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br><span class="line">  template: ./sitemap_template.xml</span><br><span class="line">  rel: false</span><br><span class="line">  tags: true</span><br><span class="line">  categories: true</span><br></pre></td></tr></table></figure>
+
+<p>若要排除文章或者页面，只需添加<code>sitemap: false</code>到文章或者页面的 front matter 处即可。</p>
+<div class="note info">另有 hexo-generator-baidusitemap 插件，其生成百度特殊站点地图文件 baidusitemap.xml</div>
+
+
+
+<h2 id="hexo-git-backup"><a href="#hexo-git-backup" class="headerlink" title="hexo-git-backup"></a>hexo-git-backup</h2><p>博客源码一键备份到Gihub仓库等源码托管平台的插件。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-git-backup</span><br></pre></td></tr></table></figure>
+
+<p>若Hexo版本低于3.0，则安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-git-backup@0.0.91</span><br></pre></td></tr></table></figure>
+
+<p>使用:</p>
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Backup 源码备份</span><br><span class="line">backup:</span><br><span class="line">    type: git</span><br><span class="line">    theme: fexo #主题名</span><br><span class="line">    message: 新文章发表 #备份说明</span><br><span class="line">    repository:</span><br><span class="line">       github: git@github.com:Senorui/Blog.git,Blog</span><br></pre></td></tr></table></figure>
+
+<p>执行命令即可一键发布文章并备份源码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d &amp;&amp; hexo b</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="hexo-neat"><a href="#hexo-neat" class="headerlink" title="hexo-neat"></a>hexo-neat</h2><p>压缩和删除html或其他脚本中的空格和无用的换行符，注释等，以减少网页文件的响应速度，实现网络的快速响应。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/rozbo/hexo-neat">https://github.com/rozbo/hexo-neat</a></p>
+<p>安装: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-neat</span><br></pre></td></tr></table></figure>
+
+<p>用法:</p>
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># hexo-neat</span><br><span class="line">neat_enable: true</span><br><span class="line"># 压缩 html</span><br><span class="line">neat_html:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line"># 压缩 css</span><br><span class="line">neat_css:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;**/*.min.css&#x27;</span><br><span class="line">    - &#x27;**/*.css.map&#x27;</span><br><span class="line"># 压缩 js</span><br><span class="line">neat_js:</span><br><span class="line">  enable: true</span><br><span class="line">  mangle: true</span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;**/*.min.js&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>根据自己的来合理调整压缩和不需要压缩的文件。</p>
+<h2 id="hexo-helper-live2d"><a href="#hexo-helper-live2d" class="headerlink" title="hexo-helper-live2d"></a>hexo-helper-live2d</h2><p>向你的Hexo里放上一只萌萌哒二次元看板娘！</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/EYHN/hexo-helper-live2d">https://github.com/EYHN/hexo-helper-live2d</a></p>
+<p>安装依赖: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<p>安装模型:</p>
+<p>模型仓库地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add &#123;packagename&#125;</span><br><span class="line"># e.g</span><br><span class="line">yarn add live2d-widget-model-koharu</span><br></pre></td></tr></table></figure>
+
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 看板娘</span><br><span class="line">live2d:</span><br><span class="line">  enable: true #是否开启看板娘</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-koharu  #换成自己安装的模型</span><br><span class="line">  display:</span><br><span class="line">    position: left #显示在左or右</span><br><span class="line">    width: 158</span><br><span class="line">    height: 233</span><br><span class="line">  mobile:</span><br><span class="line">    show: false # 是否在移动设备上显示</span><br><span class="line">    scale: 0.4 # 移动设备上的缩放</span><br><span class="line">  react:</span><br><span class="line">    opacityDefault: 0.7</span><br><span class="line">    opacityOnHover: 0.4</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="hexo-image-cloudflare"><a href="#hexo-image-cloudflare" class="headerlink" title="hexo-image-cloudflare"></a>hexo-image-cloudflare</h2><p>一个能够使用 Cloudflare来缓存博客图像的hexo插件，其由 【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://images.weserv.nl/">images.weserv.nl</a>】 驱动。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/njzjz/hexo-image-cloudflare">https://github.com/njzjz/hexo-image-cloudflare</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-image-cloudflare</span><br></pre></td></tr></table></figure>
+
+<p>可缓存外链图片和本地图片，只需在博客根目录配置好博客域名。</p>
+<h2 id="hexo-search"><a href="#hexo-search" class="headerlink" title="hexo-search"></a>hexo-search</h2><p>为博客添加站内搜索功能，此插件为本主题 <strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/forsigner/fexo">Fexo</a>】</strong>作者写的，优先适配本主题。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/forsigner/hexo-search">https://github.com/forsigner/hexo-search</a></p>
+<p>安装:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-search</span><br></pre></td></tr></table></figure>
+
+<p>在根目录config.yml文件中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.json</span><br><span class="line">  source: all # other values: posts, pages</span><br><span class="line">  trim_html: false</span><br></pre></td></tr></table></figure>
+
+<p>其他主题推荐另一个大众化一点的: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wzpan/hexo-generator-search">https://github.com/wzpan/hexo-generator-search</a></p>
+<h2 id="hexo-wordcount"><a href="#hexo-wordcount" class="headerlink" title="hexo-wordcount"></a>hexo-wordcount</h2><p>可以为文章添加字数统计和阅读时长统计，以及站点总字数统计。</p>
+<p>插件地址: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/willin/hexo-wordcount">https://github.com/willin/hexo-wordcount</a></p>
+<p>安装: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-wordcount</span><br></pre></td></tr></table></figure>
+
+<p>使用:</p>
+<p><strong>Swig</strong><br>Post Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&#123;&#123; wordcount(post.content) &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Post Minutes to Read:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&#123;&#123; min2read(post.content) &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Total Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&#123;&#123; totalcount(site) &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Ejs</strong><br>Post Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&lt;%= wordcount(post.content) %&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Post Minutes to Read:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&lt;%= min2read(post.content) %&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Total Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;&lt;%= totalcount(site) %&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Jade</strong><br>Post Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">span.post-count= wordcount(post.content)</span><br></pre></td></tr></table></figure>
+
+<p>Post Minutes to Read:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">span.post-count= min2read(post.content)</span><br></pre></td></tr></table></figure>
+
+<p>Total Count:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">span.post-count= totalcount(site)</span><br></pre></td></tr></table></figure>
+
+<p>本站主题适配为在<code>article.ejs</code>中的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;%- partial(&#x27;component/category&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
+<p>之后插入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;post-count&quot;&gt;</span><br><span class="line">        &lt;span&gt;</span><br><span class="line">           &lt;i class=&quot;fa fa-file-word&quot;&gt;&lt;/i&gt;</span><br><span class="line">           &amp;nbsp字数 &lt;%= wordcount(post.content) %&gt;</span><br><span class="line">        &lt;/span&gt;</span><br><span class="line"></span><br><span class="line">      &lt;span class=&quot;post-count&quot;&gt;</span><br><span class="line">        &lt;span&gt;</span><br><span class="line">           &lt;i class=&quot;fa fa-clock&quot;&gt;&lt;/i&gt;</span><br><span class="line">           &amp;nbsp耗时 &lt;%= min2read(post.content) %&gt; 分&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/img/others/wordcount.webp" alt="wordcount"></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>除了Hexo自带的插件之外，自己安装的插件中，有4个与SEO相关；其余1个美化类插件，4个工具型插件。</p>
+<p>以上为本站所需插件！！！</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/e682.html" target="_blank" title="本站所用插件汇总">
+        https://senorui.top/posts/e682.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/7bde.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/d7e8.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

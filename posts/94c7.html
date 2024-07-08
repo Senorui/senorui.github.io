@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">安卓手机上对流氓APP的抗争 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="小黑屋,权限狗,AdGuard,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="本文算是前面两文的升级和补充，主要介绍如何配置AdGuard以及常用的过滤规则！ 前文：— 小黑屋与权限狗掌控你的APP权限— 这些工具和拦截规则让你告别广告弹窗 就目前安卓的APP环境而言，有必要有必要采取一定的对抗措施了。特别是国内环境更是流氓满天飞，索要各种隐私权限，不给权限还不允许运行，以及各种广告推送和隐私信息采集。 目前个人使用的一套权限管理和广告和隐私拦截方案，如下：  设置小黑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓手机上对流氓APP的抗争">
+<meta property="og:url" content="https://senorui.top/posts/94c7.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="本文算是前面两文的升级和补充，主要介绍如何配置AdGuard以及常用的过滤规则！ 前文：— 小黑屋与权限狗掌控你的APP权限— 这些工具和拦截规则让你告别广告弹窗 就目前安卓的APP环境而言，有必要有必要采取一定的对抗措施了。特别是国内环境更是流氓满天飞，索要各种隐私权限，不给权限还不允许运行，以及各种广告推送和隐私信息采集。 目前个人使用的一套权限管理和广告和隐私拦截方案，如下：  设置小黑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/94c7/xhwu.webp">
+<meta property="og:image" content="https://senorui.top/img/94c7/qxgou.webp">
+<meta property="og:image" content="https://senorui.top/img/94c7/AdGuard.webp">
+<meta property="og:image" content="https://senorui.top/img/94c7/AdGwal.webp">
+<meta property="article:published_time" content="2021-06-20T20:28:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="小黑屋">
+<meta property="article:tag" content="权限狗">
+<meta property="article:tag" content="AdGuard">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/94c7/xhwu.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E9%BB%91%E5%B1%8B%E4%B8%8E%E6%9D%83%E9%99%90%E7%8B%97%E4%BD%BF%E7%94%A8"><span class="toc-text">小黑屋与权限狗使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AdGuard%E9%85%8D%E7%BD%AE"><span class="toc-text">AdGuard配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%8B%A6%E6%88%AA"><span class="toc-text">内容拦截</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E8%BF%87%E6%BB%A4"><span class="toc-text">DNS过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86"><span class="toc-text">应用管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-text">结束语</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-54_安卓手机上对流氓APP的抗争" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">安卓手机上对流氓APP的抗争</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2021.06.20</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.3k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 4分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note primary">
+
+<p>本文算是前面两文的升级和补充，主要介绍如何配置AdGuard以及常用的过滤规则！</p></div><p></p>
+<p><strong>前文：</strong><br><strong>— <a href="/posts/b963.html">小黑屋与权限狗掌控你的APP权限</a></strong><br><strong>— <a href="/posts/b7d1.html">这些工具和拦截规则让你告别广告弹窗</a></strong></p>
+<p>就目前安卓的APP环境而言，有必要有必要采取一定的对抗措施了。<br>特别是国内环境更是流氓满天飞，索要各种隐私权限，不给权限还不允许运行，以及各种广告推送和隐私信息采集。</p>
+<p>目前个人使用的一套权限管理和广告和隐私拦截方案，如下：</p>
+<ul>
+<li><strong>设置小黑屋管理员应用，并可冻结不需要或者使用频率低的应用。</strong></li>
+<li><strong>通过小黑屋赋予权限狗管理应用权限的能力，从而控制所有应用的权限。</strong></li>
+<li><strong>AdGuard作为防火墙应用，使用加密DNS并控制应用联网并进行广告与隐私拦截。</strong></li>
+</ul>
+<h2 id="小黑屋与权限狗使用"><a href="#小黑屋与权限狗使用" class="headerlink" title="小黑屋与权限狗使用"></a>小黑屋与权限狗使用</h2><p>本文仅补充小黑屋与权限狗的使用，如何设置小黑屋为管理员应用和权限狗激活可参考前文。</p>
+<p>小黑屋获得管理员权限后冻结应用只需选定所需要冻结的应用，点击右下角雪花❄图标即可一键冻结所有选中的应用。</p>
+<p><img src="/img/94c7/xhwu.webp" alt="1"><br>ps:点击图片可全屏浏览并旋转图片。</p>
+<p>而权限狗获得管理权限的能力后会默认显示所有的用户应用，在左上角打开系统应用的显示，可选择单个应用一一设置或者先设置不同的权限模板后选择要管理的应用一键套用。</p>
+<p><img src="/img/94c7/qxgou.webp" alt="2"></p>
+<h2 id="AdGuard配置"><a href="#AdGuard配置" class="headerlink" title="AdGuard配置"></a>AdGuard配置</h2><p><strong>其号称：世界上最高级的广告拦截程序！</strong></p>
+<p>首先，在<strong>应用启动管理</strong>里设置AdGuard为<strong>允许自启动、允许关联启动、允许后台活动活动</strong>，并在任务栏上锁定AdGuard应用。</p>
+<p><img src="/img/94c7/AdGuard.webp" alt="3"></p>
+<p>此处指讨论其高级版Android客户端，IOS以及WIN客户端不做讨论。</p>
+<h3 id="内容拦截"><a href="#内容拦截" class="headerlink" title="内容拦截"></a>内容拦截</h3><p>AdGuard最核心的功能之一就是内容拦截。</p>
+<p>开启高品质过滤和应用内广告拦截开关，开启所需的过滤器。不推荐开启过多的过滤器，只开启合适自己使用环境的即可。</p>
+<p><strong>个人推荐：</strong></p>
+<ul>
+<li>广告拦截，可酌情开启；</li>
+<li>隐私，不需要的是<strong>反脸书</strong>和<strong>第三方字体过略</strong>，其余酌情开启；</li>
+<li>社交，只需开启社交媒体过滤器；</li>
+<li>安全，只需开启恶意URL拦截列表；</li>
+<li>烦人，除去Cookie相关不需要开启，其他酌情开启；</li>
+<li>特定语言，只启AdGuard中文过滤器、xinggsf即可。</li>
+<li>自定义过滤器，此处着重推荐<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/privacy-protection-tools/anti-AD"><strong>Anti-AD</strong></a>和<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/banbendalao/ADgk"><strong>ADgk</strong></a>。</li>
+</ul>
+<blockquote>
+<p>Anti-AD: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://anti-ad.net/adguard.txt">https://anti-ad.net/adguard.txt</a><br>adgk: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt">https://banbendalao.coding.net/p/adgk/d/ADgk/git/raw/master/ADgk.txt</a></p>
+</blockquote>
+<h3 id="DNS过滤"><a href="#DNS过滤" class="headerlink" title="DNS过滤"></a>DNS过滤</h3><p>AdGuard DNS 是广告拦截，隐私保护及家长控制的交替解决方案。</p>
+<p>手机上推荐使用<strong>AdGuard DNS</strong>并选择DNS-over-QUIC类型的服务器，若你使用后加载比较慢可选择国内其他的加密DNS，个人推荐如下IQDNS：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tls://h.iqiq.io:853</span><br><span class="line">quic://h.iqiq.io:784</span><br><span class="line">tls://c.passcloud.xyz</span><br><span class="line">tls://a.passcloud.xyz:5432</span><br><span class="line">quic://c.passcloud.xyz:784 </span><br><span class="line">quic://a.passcloud.xyz:784</span><br><span class="line">https://a.passcloud.xyz/sz</span><br><span class="line">https://a.passcloud.xyz/hk </span><br><span class="line">https://a.passcloud.xyz/cdn</span><br><span class="line">https://a.passcloud.xyz/dns-query</span><br><span class="line">https://worldwide.passcloud.xyz/dns-query</span><br></pre></td></tr></table></figure>
+<p>IQDNS主页：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://iqdns.xyz/all.html">https://iqdns.xyz/all.html</a></p>
+<p>DNS过滤器推荐：官方的AdGuard DNS过滤器、Anti-ad DNS过滤器、Adaway Hosts过滤器。</p>
+<blockquote>
+<p>Anti-ad DNS: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://anti-ad.net/easylist.txt">https://anti-ad.net/easylist.txt</a><br>Adaway Hosts: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://adaway.org/hosts.txt">https://adaway.org/hosts.txt</a></p>
+</blockquote>
+<h3 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h3><p>此功能包括应用网络请求统计、广告和隐私拦截统计、广告拦截设置以及防火墙设置。</p>
+<p>利用批量更改设置对所有应用开启AdGuard路由流量并开启广告拦截，对于HTTPS过滤请谨慎开启，比如哔哩哔哩开启后无法观看直播。</p>
+<p><strong>防火墙功能的终极设置为：</strong></p>
+<ul>
+<li>在安卓设置中开启AdGuard的<strong>使用情况访问权限</strong>，当打开禁止联网的应用会<strong>弹窗提醒</strong>，并可设置为<strong>此刻允许联网</strong>。</li>
+<li>在默认通过AdGuard流量下，运行<strong>批量更改</strong>设置并一键禁用<strong>全部应用</strong>的<strong>蜂窝数据</strong>、<strong>Wi-Fi数据</strong>、<strong>息屏时蜂窝数据</strong>和<strong>息屏时的Wi-Fi数据</strong>，在根据使用情况对单个应用进行设置，比如微信、QQ、华为推送等应用需要防火墙全开，而哔哩哔哩等视频应用只需要开启Wi-Fi数据即可。</li>
+<li>默认情况下开启防火墙通知的，对于需要永久禁止联网的应用可选择关闭防火墙通知。</li>
+</ul>
+<p><img src="/img/94c7/AdGwal.webp" alt="4"></p>
+<p>其他功能，比如隐身模式、安全浏览、扩展功能等根据个人需求开启即可。</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>对付流氓APP的终极办法就是<strong>禁止联网、禁止自启动、禁止后台活动</strong>，并配合过滤器拦截广告和跟踪器。</p>
+<p>不过，此方案相较于普通方案使用手机需要一定的学习和使用成本。</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/94c7.html" target="_blank" title="安卓手机上对流氓APP的抗争">
+        https://senorui.top/posts/94c7.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/a49b.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/dbea.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

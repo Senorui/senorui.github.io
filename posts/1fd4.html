@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">Windows Terminal的使用与简单美化 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Windows,Terminal,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="Windows Terminal的使用与简单美化。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows Terminal的使用与简单美化">
+<meta property="og:url" content="https://senorui.top/posts/1fd4.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="Windows Terminal的使用与简单美化。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/1fd4/Terminal.webp">
+<meta property="og:image" content="https://senorui.top/img/1fd4/terminal.ico">
+<meta property="og:image" content="https://senorui.top/img/1fd4/gitbash.webp">
+<meta property="og:image" content="https://senorui.top/img/1fd4/cmd.webp">
+<meta property="og:image" content="https://senorui.top/img/1fd4/ssh.webp">
+<meta property="og:image" content="https://senorui.top/img/1fd4/pwsh.webp">
+<meta property="og:image" content="https://senorui.top/img/1fd4/scl.webp">
+<meta property="article:published_time" content="2020-09-26T20:41:16.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="Terminal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/1fd4/Terminal.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Windows-Terminal"><span class="toc-text">安装Windows Terminal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8Windows-Terminal"><span class="toc-text">配置使用Windows Terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEPWS"><span class="toc-text">配置PWS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGit-bash"><span class="toc-text">配置Git bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AESSH"><span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%87%B3%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95"><span class="toc-text">添加至右键菜单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96Windows-Terminal"><span class="toc-text">美化Windows Terminal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">最终效果</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-27_Windows Terminal使用与简单美化 " class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">Windows Terminal的使用与简单美化</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.09.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 934
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 4分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note warning">以下配置和修改仅供参考，不具有普适性；还请阅读微软官方文档进修改。</div>
+
+
+<h2 id="安装Windows-Terminal"><a href="#安装Windows-Terminal" class="headerlink" title="安装Windows Terminal"></a>安装Windows Terminal</h2><p>安装使用要求系统是win10 1903及以上，直接在微软商店搜索下载安装即可。</p>
+<p><img src="/img/1fd4/Terminal.webp" alt="Terminal"></p>
+<h2 id="配置使用Windows-Terminal"><a href="#配置使用Windows-Terminal" class="headerlink" title="配置使用Windows Terminal"></a>配置使用Windows Terminal</h2><p>Windows Terminal提供了许多设置和配置选项，可以对Terminal的外观自定义设置，配置文件格式为json，设置起来还是很友好的。</p>
+<h3 id="配置PWS"><a href="#配置PWS" class="headerlink" title="配置PWS"></a>配置PWS</h3><p>Win10自带的Windows PowerShell是5.1的，我们需要安装新版的 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/PowerShell/powershell/releases">Windows PowerShell</a></p>
+<p>默认或自定义安装后，打开 <strong>Windows Terminal</strong>的设置文件</p>
+<p>将 <em>profiles</em>下的 PowerShell 配置修改为</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// Make changes here to the powershell.exe profile.</span></span><br><span class="line">    <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PowerShell&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/Program Files/PowerShell/7-preview/pwsh.exe&quot;</span><span class="punctuation">,</span> <span class="comment">// PowerShell的路径</span></span><br><span class="line">    <span class="attr">&quot;colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Gruvbox Dark&quot;</span><span class="punctuation">,</span> <span class="comment">// PowerShell的主题</span></span><br><span class="line">    <span class="attr">&quot;backgroundImage&quot;</span> <span class="punctuation">:</span><span class="string">&quot;D:/xxx/backgroud/Win104k.png&quot;</span><span class="punctuation">,</span> <span class="comment">// PowerShell的背景</span></span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="配置Git-bash"><a href="#配置Git-bash" class="headerlink" title="配置Git bash"></a>配置Git bash</h3><p>先安装Git。</p>
+<p>如果你也像我一样使用的是hexo博客，那么Git肯定已经安装好了。</p>
+<p>在<strong>Windows Terminal</strong>中打开设置文件</p>
+<p>在 <em>profiles</em>下配置</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span>  </span><br><span class="line">    <span class="attr">&quot;guid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&#123;087a9f7c-b287-422f-a447-93f740bab0a4&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Git&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/Program Files/Git/bin/bash.exe&quot;</span><span class="punctuation">,</span> <span class="comment">// Git bash的路径</span></span><br><span class="line">    <span class="attr">&quot;colorScheme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Gruvbox Dark&quot;</span><span class="punctuation">,</span> <span class="comment">// Git终端的主题</span></span><br><span class="line">    <span class="attr">&quot;icon&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;D:/xxx/backgroud/bash.png&quot;</span><span class="punctuation">,</span> <span class="comment">// Git的图标</span></span><br><span class="line">    <span class="attr">&quot;backgroundImage&quot;</span> <span class="punctuation">:</span><span class="string">&quot;D:/xxx/backgroud/Bg.webp&quot;</span><span class="punctuation">,</span> <span class="comment">// Git终端背景</span></span><br><span class="line">    <span class="attr">&quot;hidden&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;acrylicOpacity&quot;</span><span class="punctuation">:</span> <span class="number">0.75</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>同样打开在 <strong>Windows Terminal</strong>中打开设置文件</p>
+<p>在 <em>profiles</em>下配置</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;acrylicOpacity&quot;</span> <span class="punctuation">:</span> <span class="number">0.5</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;closeOnExit&quot;</span> <span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;colorScheme&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Gruvbox Dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;commandline&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;ssh name@IP&quot;</span><span class="punctuation">,</span> <span class="comment">// 例如 ssh root@11.10.9.8</span></span><br><span class="line">    <span class="attr">&quot;backgroundImage&quot;</span> <span class="punctuation">:</span><span class="string">&quot;D:/xxx/backgroud/scaled.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cursorColor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#FFFFFF&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cursorShape&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;bar&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;fontFace&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Consolas&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;fontSize&quot;</span> <span class="punctuation">:</span> <span class="number">14</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;guid&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;&#123;1bc9cb29-ffb1-4acc-8648-77c52193c26a&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;icon&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;D:/xxx/backgroud/huaweicloud.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;historySize&quot;</span> <span class="punctuation">:</span> <span class="number">9001</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;Huawei Cloud&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;padding&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;0, 0, 0, 0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;snapOnInput&quot;</span> <span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;startingDirectory&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;useAcrylic&quot;</span> <span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>附加: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.guidgen.com/">guid生成器</a></strong></p>
+<h3 id="添加至右键菜单"><a href="#添加至右键菜单" class="headerlink" title="添加至右键菜单"></a>添加至右键菜单</h3><p>下载一个Terminal图标</p>
+<p><img src="/img/1fd4/terminal.ico" alt="Terminal图标"></p>
+<p>新建一个<code>.reg</code>注册表文件，其文件内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]</span><br><span class="line">@=&quot;Open Windows Terminal Here&quot;</span><br><span class="line">&quot;Icon&quot;=&quot;D:\\xxx\\backgroud\\terminal.ico&quot; //路径不能有中文</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]</span><br><span class="line">@=&quot;C:\\Users\\xxx\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe&quot; //xxx为用户名</span><br></pre></td></tr></table></figure>
+
+<p>双击将值写入注册表即可。</p>
+<h2 id="美化Windows-Terminal"><a href="#美化Windows-Terminal" class="headerlink" title="美化Windows Terminal"></a>美化Windows Terminal</h2><p>在schemes处增加主题并调用。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Add custom color schemes to this array.</span></span><br><span class="line"><span class="comment">// To learn more about color schemes, visit https://aka.ms/terminal-color-schemes</span></span><br><span class="line"><span class="attr">&quot;schemes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Gruvbox Dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#1e1e1e&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#be0f17&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#868715&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#cc881a&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#377375&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#a04b73&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#578e57&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#978771&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#7f7061&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#f73028&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#aab01e&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#f7b125&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#719586&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#c77089&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#7db669&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#e6d4a3&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#1e1e1e&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#4d4dff&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AtomOneLight&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;black&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;red&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#de3e35&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;green&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3f953a&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;yellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#d2b67c&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;blue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2f5af3&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;purple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#950095&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;cyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3f953a&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;white&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#bbbbbb&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightBlack&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#000000&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightRed&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#de3e35&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightGreen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3f953a&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightYellow&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#d2b67c&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightBlue&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2f5af3&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightPurple&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#a00095&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightCyan&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#3f953a&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;brightWhite&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#ffffff&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;background&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#f9f9f9&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;foreground&quot;</span><span class="punctuation">:</span> <span class="string">&quot;#2a2c33&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+<p>在 <em>profiles</em>下的各配置中用调用<code>&quot;colorScheme&quot; : &quot;Gruvbox Dark&quot;</code>即可，如上述 <a href="/posts/1fd4.html#%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8Windows-Terminal">各配置项</a> 所示。</p>
+<p><strong>更多主题下载: 【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://windowsterminalthemes.dev/">Windows Terminal Themes</a>】</strong></p>
+<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src="/img/1fd4/gitbash.webp" alt="gitbash"></p>
+<p><img src="/img/1fd4/cmd.webp" alt="cmd"></p>
+<p><img src="/img/1fd4/ssh.webp" alt="ssh"></p>
+<p><img src="/img/1fd4/pwsh.webp" alt="pwsh"></p>
+<p>毕竟….ε=ε=ε=┏(゜ロ゜;)┛逃</p>
+<p><img src="/img/1fd4/scl.webp" alt="scl"></p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/1fd4.html" target="_blank" title="Windows Terminal的使用与简单美化">
+        https://senorui.top/posts/1fd4.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/46a3.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/39fb.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

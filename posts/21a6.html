@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">用AdGuardHome搭建去广告DNS服务 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="AdGuard Home,去广告DNS服务,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="用AdGuardHome搭建一个可用于PC、移动端和路由端的去广告DNS服务。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用AdGuardHome搭建去广告DNS服务">
+<meta property="og:url" content="https://senorui.top/posts/21a6.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="用AdGuardHome搭建一个可用于PC、移动端和路由端的去广告DNS服务。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-01T21:52:38.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="AdGuard Home">
+<meta property="article:tag" content="去广告DNS服务">
+<meta name="twitter:card" content="summary">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85AdGuard-Home"><span class="toc-text">安装AdGuard Home</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="toc-text">服务配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E6%B8%B8DNS%E8%AE%BE%E7%BD%AE"><span class="toc-text">上游DNS设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E6%B7%BB%E5%8A%A0"><span class="toc-text">过滤器添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE"><span class="toc-text">设备配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-text">路由器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F"><span class="toc-text">安卓系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iOS"><span class="toc-text">iOS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#macOS"><span class="toc-text">macOS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-11_搭建AdGuardHome去广告DNS服务" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">用AdGuardHome搭建去广告DNS服务</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.06.01</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.3k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 5分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info no-icon">
+AdGuard Home是用于阻止广告和跟踪的全网络软件。设置完成后，它将涵盖所有家庭设备，并且您不需要任何客户端软件。
+
+<p>它充当DNS服务器，将跟踪域重新路由到“黑洞”，从而防止您的设备连接到这些服务器。它基于我们用于公共AdGuard DNS服务器的软件-两者共享许多通用代码。</p></div><p></p>
+<p><strong>【项目地址】:</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/AdguardTeam/AdGuardHome/releases">https://github.com/AdguardTeam/AdGuardHome/releases</a></p>
+<p><strong>【Linux发行版】:</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://snapcraft.io/adguard-home">https://snapcraft.io/adguard-home</a></p>
+<iframe src="https://snapcraft.io/adguard-home/embedded?button=white&channels=true&summary=true" frameborder="0" width="100%" height="410px" style="border: 1px solid #CCC; border-radius: 2px;"></iframe>
+
+
+<h3 id="安装AdGuard-Home"><a href="#安装AdGuard-Home" class="headerlink" title="安装AdGuard Home"></a>安装AdGuard Home</h3><p>此处基于CentOS 7 X64安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz</span><br><span class="line">&amp;</span><br><span class="line">wget https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.102.0/AdGuardHome_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>推荐使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget http://soft.xiaoz.org/linux/AdGuardHome_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf AdGuardHome_linux_arm64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>进入AdGuard Home目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd AdGuardHome</span><br></pre></td></tr></table></figure>
+
+<p>放行3000端口（AdGuard Home默端口）</p>
+<p>firewalld放行3000端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=3000/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>iptables放行3000端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 3000 -j ACCEPT</span><br><span class="line">service iptables save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>同时需要放行53端口</p>
+<p>firewalld放行53端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=53/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=53/udp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>iptables放行53端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 53 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p udp --dport 53 -j ACCEPT</span><br><span class="line">service iptables save</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：同时需要在服务器的安全组手动打开3000、53端口</strong></p>
+<p>启动AdGuard Home</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./AdGuardHome</span><br></pre></td></tr></table></figure>
+
+<p>另，为了方便管理可使用命令<code>./AdGuardHome -s install</code>安装为服务，然后再使用下面的命令来进行管理。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#启动</span><br><span class="line">systemctl start AdGuardHome</span><br><span class="line">#开机自启</span><br><span class="line">systemctl enable AdGuardHome</span><br><span class="line">#重启</span><br><span class="line">systemctl restart AdGuardHome</span><br><span class="line">#停止</span><br><span class="line">systemctl stop AdGuardHome</span><br></pre></td></tr></table></figure>
+
+<h3 id="服务配置"><a href="#服务配置" class="headerlink" title="服务配置"></a>服务配置</h3><p>启动AdGuard Home后，需设置监听端口需为<code>3000</code>，DNS服务器端口默认，其他下一步即可</p>
+<p>然后在浏览器输入<code>http://ip:3000</code>按照提示设置账号密码即可进入网页控制面板。</p>
+<h4 id="上游DNS设置"><a href="#上游DNS设置" class="headerlink" title="上游DNS设置"></a>上游DNS设置</h4><p>AdGuard Home默认使用 Cloudflare DNS作为上游服务器，如果您服务器在国内可能请求上游DNS延迟比较高，点击设置 - DNS设置为国内的DNS，如阿里巴巴的223.5.5.5、电信的114.114.114.114、CNNIC的1.2.4.8 &amp;210.2.4.8。</p>
+<h4 id="过滤器添加"><a href="#过滤器添加" class="headerlink" title="过滤器添加"></a>过滤器添加</h4><p>在网页控制面板 - 过滤器，AdGuardHome 内置了部分广告过滤规则，你也可以手动添加过滤器或者进行检查更新，也可以自定义过滤器规则。</p>
+<p><strong>【国内常用规则可参考我的这篇文章】: <a href="https://senorui.top/posts/b7d1.html">https://senorui.top/posts/b7d1.html</a></strong></p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>其配置文件路径<code>/root/AdGuardHome/AdGuardHome.yaml</code></p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bind_host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="attr">bind_port:</span> <span class="number">3000</span></span><br><span class="line"><span class="attr">auth_name:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">auth_pass:</span> <span class="string">admin</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-cn</span></span><br><span class="line"><span class="attr">rlimit_nofile:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">dns:</span></span><br><span class="line">  <span class="attr">bind_host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">53</span></span><br><span class="line">  <span class="attr">protection_enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">filtering_enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">blocking_mode:</span> <span class="string">nxdomain</span></span><br><span class="line">  <span class="attr">blocked_response_ttl:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">querylog_enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ratelimit:</span> <span class="number">20</span></span><br><span class="line">  <span class="attr">ratelimit_whitelist:</span> []</span><br><span class="line">  <span class="attr">refuse_any:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">bootstrap_dns:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">114.114</span><span class="number">.114</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">223.5</span><span class="number">.5</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+
+<p>账号密码也只能通过这里修改。</p>
+<h3 id="设备配置"><a href="#设备配置" class="headerlink" title="设备配置"></a>设备配置</h3><p><strong>【官方配置文档】:</strong> <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#configure-devices">https://github.com/AdguardTeam/AdGuardHome/wiki/Getting-Started#configure-devices</a></p>
+<h4 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h4><p>此设置将自动覆盖连接到家庭路由器的所有设备，您无需手动配置它们。</p>
+<ol>
+<li><p>打开路由器的首选项。通常，您可以通过URL(例如<a target="_blank" rel="external nofollow noopener noreferrer" href="http://192.168.0.1/">http://192.168.0.1/</a> 或<a target="_blank" rel="external nofollow noopener noreferrer" href="http://192.168.1.1/">http://192.168.1.1/</a>) 从浏览器访问它。可能会要求您输入密码。如果您忘记了密码，通常可以通过按路由器本身上的按钮来重置密码。某些路由器需要特定的应用程序，在这种情况下，应已将其安装在计算机/电话上。</p>
+</li>
+<li><p>查找DHCP / DNS设置。在允许两到三组数字的字段旁边查找“ DNS”字母，每组数字分为四组，每组由一到三位数字组成。<br>在此处输入您的AdGuard Home服务器地址。</p>
+</li>
+</ol>
+<h4 id="安卓系统"><a href="#安卓系统" class="headerlink" title="安卓系统"></a>安卓系统</h4><ol>
+<li><p>在Android菜单主屏幕上，点击“设置”</p>
+</li>
+<li><p>在菜单上点击Wi-Fi。这将显示所有可用网络的列表（无法为移动连接设置自定义DNS）</p>
+</li>
+<li><p>长按您所连接的网络，然后点击“修改网络”</p>
+</li>
+<li><p>在某些设备上，您可能需要选中“高级”框以查看更多设置。要调整您的Android DNS设置，您需要将IP设置从“ DHCP”切换到“静态”。</p>
+</li>
+<li><p>将“ DNS 1”和“ DNS 2”值更改为您的AdGuard家庭地址。</p>
+</li>
+</ol>
+<h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><ol>
+<li><p>在主屏幕上，点击“设置”</p>
+</li>
+<li><p>在左侧菜单中选择“ Wi-Fi”（无法为移动网络配置DN）</p>
+</li>
+<li><p>点击当前活动网络的名称</p>
+</li>
+<li><p>在“ DNS”字段中输入您的AdGuard家庭地址</p>
+</li>
+</ol>
+<h4 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h4><ol>
+<li><p>单击Apple图标，然后转到“系统偏好设置”。</p>
+</li>
+<li><p>点击“网络”</p>
+</li>
+<li><p>选择列表中的第一个连接，然后单击“高级”。</p>
+</li>
+<li><p>选择“ DNS”标签，然后添加AdGuard Home的地址。</p>
+</li>
+</ol>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><ol>
+<li><p>通过“开始”菜单或Windows搜索打开控制面板。</p>
+</li>
+<li><p>转到“网络和Internet”类别，然后转到“网络和共享中心”。</p>
+</li>
+<li><p>在屏幕的左侧找到“更改适配器设置”，然后单击它。</p>
+</li>
+<li><p>选择您的活动连接，右键单击它，然后选择“属性”。</p>
+</li>
+<li><p>在列表中找到“ Internet协议版本4（TCP / IP）”，选择它，然后再次单击“属性”。<br>选择“使用以下DNS服务器地址”，然后在此处输入您的AdGuard主地址。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>对于一个免费的开源项目来说，AdGuard Home无疑是强大的，其支持树莓派 Windows、Linux、MacOS等系统，还提供了Docker 一键安装的方式，简单方便，最重要的是时常进行更新维护。</p>
+<p>AdGuard Home还提供了直观的数据统计系以及界面化的操作，无论是家庭还是企业都可以用来自建 DNS。</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/21a6.html" target="_blank" title="用AdGuardHome搭建去广告DNS服务">
+        https://senorui.top/posts/21a6.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/a2b7.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/59ce.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>

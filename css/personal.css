@@ -1,0 +1,307 @@
+/* 全站黑白
+html {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(100%);
+} */
+
+/* 微调天气插件样式 */
+.wv-top-select,
+.wv-top-select-option,
+button.wv-top-button {
+    border-radius: 3px!important;
+    font-size: 10px!important;
+}
+
+/* 首页背景图 */
+html.page-home {
+    background-image: url(/img/home/Wall.webp);
+}
+
+/* 深色模式样式 */
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #121212;
+        background-image: none; /* 深色模式不显示背景图 */
+    }
+
+    html, input, textarea, optgroup, select, button {
+        border-color: #736b5e;
+        color: #b9b0b0;
+    }
+
+    /* 首页 */
+    html.page-home {
+        background-image: url(/img/home/Dwall.webp)
+    }
+    .icpbei a,
+    .content-home .slogan {
+        color: #cdc6bb!important;
+    }
+    .jinrishici a {
+        color: #e8e6e3!important;
+    }
+    /* 天气城市选择框 */
+    .wv-top-select,
+    .wv-top-select-option,
+    button.wv-top-button {
+    	background-color: #202324;
+    	color: #f4f4f4;
+    }
+
+    /* 项目页文本 */
+    .content.content-project .intro {
+        color: hsla(0, 0%, 100%, .87);
+    }
+   
+    /* 博客页面标题 */
+    h1.name,
+    .content-home .nav .item a,
+    .page-header .box-blog-info .info .name {
+        color: #e8e6e3;
+    }
+    /* 归档-年月 */
+    .item-year a.text-year {
+        color: #f4f4f4;
+    }
+    /* 盒子 */
+    .post-header.CENTER,
+    .toolbox .toolbox-entry,
+    .toolbox .list-toolbox .item-toolbox a {
+        background-color: #202325!important;
+        color: #c8c3bc;
+    }
+    
+    /* 左侧树枝 */
+    .content {
+        border-left-color: #323638;
+    }
+
+    /* 移动端页面导航 */
+    .toolbox-mobile,
+    .modal-header .btn-close,
+    .modal-body .list-toolbox .item-toolbox a{
+        color: #c8c3bc;
+        background-color: #202325!important;
+    }
+    .modal-dialog {
+       background-color: #191b1c;
+    }
+
+    /* PC页面导航 */
+    .pagination .page-nav .page-number.current,
+    .pagination .page-nav .page-number, 
+    .pagination .page-nav .extend,
+    .pagination .page-nav .page-number:hover,
+    .pagination .page-nav .extend:hover {
+        color: #bdb7af;
+        background-color: #202325;
+    }
+
+    /* 分类&标签页 */
+    .category-box .category-title,
+    .tag-box .tag-title {
+        color: #c8c3bc;
+        background-color: #202325;
+    }
+    .item-category-name {
+        color: #6495ed;
+    }
+    .category-box .category-list .category-item,
+    .tag-box .tag-list .tag-item {
+        color: #6495ed;
+        background-color: #202325;
+    }
+    .category-box .category-list .category-item:hover,
+    .tag-box .tag-list .tag-item:hover {
+        background-color: #202020;
+    }
+
+    /* 归档分类标签文章hover */
+    .item-post .post-title:hover {
+        color: #21e5be!important;
+    }
+
+    /* 搜索页 */
+    .content.content-search .list-search .item .title {
+        color: hsla(0, 0%, 96%, 1);
+    }
+    .content.content-search .list-search .item .post-content {
+        color: hsla(0, 0%, 100%, .6);
+    }
+
+    /* 友链页 */
+    .content.content-link .link-list .link-item a {
+        color: hsla(0, 0%, 100%, .88);
+    }
+    .content.content-link .tip .icon-info,
+    .content.content-link .tip .icon-mail {
+        color: #e8e6e3;
+        background-color: #202325;
+    }
+
+    /* 移动端关于页 */
+    .content.content-about .about-list {
+        border-left-color: #323638;
+    }
+
+    /* 搜索页 */
+    .content.content-search .wrap-search-box .search-box,
+    .content.content-search .wrap-search-box .search-box .input-search {
+        background-color: #2b2f31;
+    }
+
+    /* 返回顶部按钮 */
+    a.back-top {
+        background-color: #202325;
+    }
+
+    /* 文章meta */
+    .article-meta {
+        color: hsla(0, 0%, 100%, 0.6);
+    }
+    /* 文章各级标题 */
+    .content.content-post,
+    .article-header,
+    .post-title,
+    .article-content h1,
+    .article-content h2 {
+        color: hsla(0, 0%, 100%, 1)!important;
+    }
+    /* 三级标题以下对比度降低 */
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+        color: hsla(0, 0%, 100%, .9);
+    }
+    /* 文章目录 */
+    .toc-article a {
+        color: hsla(0, 0%, 100%, .8);
+    }
+    .toc-article a:hover {
+    	color: hsla(0, 0%, 100%, .9);
+    }
+    /* 正文&ol&ul */
+    .article-content p,
+    .article-content ol,
+    .article-content li,
+    .article-content ul {
+        color: hsla(0, 0%, 100%, .88);
+    }
+    /* 正文加粗 */
+    .article-content strong {
+        color: hsla(0, 0%, 100%, .90);
+    }
+
+    /* 图片和看板娘亮度 */
+    img,
+    html.page-home img,
+    .live2d-widget-container {
+        -webkit-filter: brightness(.8);
+        filter: brightness(.8);
+    }
+
+    /* 表格样式 */
+    table, table td, table th {
+        color: hsla(0, 0%, 100%, .8);
+        border-color: #606666;
+    }
+    table th {
+        background-color: #223036;
+    }
+    table tbody tr:nth-child(2n) {
+    	background-color: #132125;
+    }
+
+    /* 正文hr */
+    .article hr {
+        border-color: #074e7c;
+        background-color: #181a1b;
+    }
+    /* 正文版权声明 */
+    .post-copyright {
+        border-left-color: #18a789;
+        background-color: #1b1e1f;
+    }
+
+    /* 正文引用框样式 */
+    .article-content blockquote {
+        background-color: #202324;
+    }
+
+    /* 代码块*/
+    kbd, pre, samp, figure.highlight {
+        background-color: #202324;
+        color: #e1dedb;
+    }
+    /* 小代码块 */
+    code {
+        background-color: #282b2d;
+    }
+    /* 代码样式 */
+    .function .params,
+    .highlight .section,
+    .highlight .header,
+    .highlight .name,
+    .highlight .function,
+    .highlight.python .decorator,
+    .highlight.python .title,
+    .highlight.ruby .function .title,
+    .highlight.ruby .title .keyword,
+    .highlight.perl .sub,
+    .highlight.javascript .title,
+    .highlight.coffeescript .title {
+        color: #e7e0d4;
+    }
+    /* 代码复制按钮 */
+    .btn-copy {
+        border-color: #3c4143;
+        background-color: #222426;
+        background-image: linear-gradient(rgb(26, 28, 29), rgb(34, 36, 38));
+        color: #c8c3bc;
+    }
+
+    /* 赞赏按钮和背景 */
+    .donation .btn-donation {
+        border-color: #8c8e8f;
+        color: #b2aca2;
+    }
+    .donation .donation-body {
+        background-color: #202324;
+        color: #b2aca2;
+    }
+
+    /* 各标签 */
+    .note {
+        border-top-color: initial;
+        border-right-color: initial;
+        border-bottom-color: initial;
+    }
+    .note.info {
+        background-color: #083646;
+        border-left-color: #0180eb;
+    }
+    .note.primary {
+        background-color: #442551;
+        border-left-color: #4c2c86;
+    }
+    .note.danger {
+        background-color: #4e0a0e;
+        border-left-color: #cc100b;
+    }
+    .note.warning {
+        background-color: #905a0d;
+        border-left-color: #ffc107;
+    }
+
+    /* 滚动条 */
+    ::-webkit-scrollbar {
+        background-color: #181a1b;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: #222426;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #710000;
+    }
+}

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+             -. .                                        
+       _____   ',' ,                                    
+     ,'     ,'   ', ',                                  
+   ,'     ,'      |  |                                  
+   \       \       |  |                                  
+     \ /^\   \    ,' ,'                                  
+           \   \ ,' ,'      L'Internationale,            
+     / ~-.___\.-'  ,'            Sera le genre humain.   
+   /   .______.- ~ \                                     
+ /   /'          \   \                                   
+ \./               \/'                                                                                      
+-->
+<html lang="zh">
+<html class="page-post">
+<head>
+  <meta charset="UTF-8">
+  <meta name="generator" content="Hexo 5.4.2">
+  <meta name="copyright" content="Senorui">
+  <meta name="robots" content="noimageindex">
+  <meta http-equiv="Cache-Control" content="max-age=1800">
+  <meta http-equiv="content-type" content="text/html, X-Content-Type-Options=nosniff, X-XSS-Protection:1, mode=block">
+  <!-- Google font预加载&缓存 -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  </noscript>
+
+  
+  <title itemprop="name">对本站进行的一系列优化 | 睿先森</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta name="keywords" content="Hexo博客,优化提速,睿先森,博客,Senorui,hexo,静态网站,学习分享">
+  
+
+  <meta name="description" content="我对本站做的一点优化提速，开启代码压缩、图片压缩、资源启用CDN引用、开启预加载等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对本站进行的一系列优化">
+<meta property="og:url" content="https://senorui.top/posts/6bcd.html">
+<meta property="og:site_name" content="睿先森">
+<meta property="og:description" content="我对本站做的一点优化提速，开启代码压缩、图片压缩、资源启用CDN引用、开启预加载等等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://senorui.top/img/others/yasuo.webp">
+<meta property="article:published_time" content="2020-11-30T22:48:26.000Z">
+<meta property="article:modified_time" content="2024-07-08T14:40:09.009Z">
+<meta property="article:author" content="Senorui">
+<meta property="article:tag" content="Hexo博客">
+<meta property="article:tag" content="优化提速">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://senorui.top/img/others/yasuo.webp">
+
+  
+    <link rel="alternate" href="/atom.xml" title="睿先森" type="application/atom+xml">
+  
+
+  
+    <link rel="icon" href="/icon/favicon.ico">
+  
+  
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="睿先森">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#abd7ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="睿先森">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="theme-color" content="#abd7ff">
+  
+
+  <link href="/css/styles.css?v=2021042423" rel="stylesheet">
+
+  
+  
+    
+<link rel="stylesheet" href="/css/personal.css">
+
+  
+  
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</head>
+
+<body>
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">菜单</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">菜单</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">文档
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">搜索
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">RSS
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Yarn%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">使用Yarn包管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9"><span class="toc-text">代码压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9"><span class="toc-text">图片压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98"><span class="toc-text">图片缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E7%AC%AC%E4%B8%89%E6%96%B9%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD"><span class="toc-text">优化第三方资源加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%A2%84%E5%8A%A0%E8%BD%BD"><span class="toc-text">使用预加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%92%88%E5%AF%B9%E6%80%A7%E5%BC%95%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E8%B5%84%E6%BA%90"><span class="toc-text">针对性引入第三方资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-text">其他方法</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-40_我对网站做的一些优化" class="article article-type-post" itemprop="blogPost">
+
+  <header class="article-header">
+    <h1 class="post-title">对本站进行的一系列优化</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>&nbsp2020.11.30</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>&nbspSenorui</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>&nbsp
+    <a class="article-category-link" href="/categories/%E7%83%9F%E5%B2%9A%E4%BA%91%E5%B2%AB/">烟岚云岫</a>
+  </span>
+
+
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-file-word"></i>
+           &nbsp字数 1.1k
+        </span>
+
+      <span class="post-count">
+        <span>
+           <i class="fa fa-clock"></i>
+           &nbsp耗时 5分</span>
+      </span>
+
+      
+      <i class="fa fa-eye"></i> 
+        <span>
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </span></div>
+  </header>
+
+  <div class="article-content" id="article-content">
+    
+      <div class="note info">首先将站点搬到国内服务器，弃用各种不必要的统计并精简和删除不必要的资源。</div>
+
+<p><strong><p class="div-border red">2020-11-30 更新，针对性加载网页所需资源。</p></strong></p>
+<h2 id="使用Yarn包管理器"><a href="#使用Yarn包管理器" class="headerlink" title="使用Yarn包管理器"></a>使用Yarn包管理器</h2><p>Yarn会并行执行安装包所以速度要快很多，以及其拥有的离线模式更是显著提高安装下载的速度。</p>
+<p>安装Yarn</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install yarn -g</span><br></pre></td></tr></table></figure>
+
+<p>删除原 <strong>node_modules</strong> 再重新安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -rf node_modules</span><br><span class="line">yarn</span><br></pre></td></tr></table></figure>
+
+<p>Yarn安装全部依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn</span><br><span class="line">#或者</span><br><span class="line">yarn install</span><br></pre></td></tr></table></figure>
+
+<p>切换为淘宝源</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>使用方法见: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://yarn.bootcss.com/docs/usage">https://yarn.bootcss.com/docs/usage</a></p>
+<h2 id="代码压缩"><a href="#代码压缩" class="headerlink" title="代码压缩"></a>代码压缩</h2><p>代码压缩使用的是<code>hexo-neat</code>插件，其配置使用简单。<br>安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add hexo-neat</span><br></pre></td></tr></table></figure>
+
+<p>博客根目录下做如下配置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># hexo-neat</span><br><span class="line">neat_enable: true</span><br><span class="line"># 压缩 html</span><br><span class="line">neat_html:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line"># 压缩 css</span><br><span class="line">neat_css:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;**/*.min.css&#x27;</span><br><span class="line">    - &#x27;**/*.css.map&#x27;</span><br><span class="line"># 压缩 js</span><br><span class="line">neat_js:</span><br><span class="line">  enable: true</span><br><span class="line">  mangle: true</span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;**/*.min.js&#x27;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>统一全站图片格式，本站全部使用 <code>.webp</code> 格式图片。</p>
+<p>使用图片压缩工具，我使用的是 <strong>【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/meowtec/Imagine/">Imagine</a>】</strong>客户端，其也支持各格式间的转换。</p>
+<p><img src="/img/others/yasuo.webp" alt="1"></p>
+<div class="note warning no-icon">
+
+<p>注: <strong>.jpg</strong>转换为 <strong>.png</strong> 格式需要安装 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://imagemagick.org/script/download.php">ImageMagick</a>，且 <strong>.jpg</strong> 转 <strong>.png</strong> 在保证清晰度情况下由于色彩丰富度增加一般图片大小会相应变大。</p></div><p></p>
+<p>也有其他图片压缩网站或工具，比如 【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.iloveimg.com/zh-cn">I love IMG</a>】、【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://tinypng.com/">TinyPNG</a>】 以及 【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/marketplace/imgbot">ImgBot</a>】等。</p>
+<h2 id="图片缓存"><a href="#图片缓存" class="headerlink" title="图片缓存"></a>图片缓存</h2><p>使用 hexo-image-cloudflare 插件，其利用 【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://images.weserv.nl/">images.weserv.nl</a>】 把博客所有图片缓存到 Cloudfare上。</p>
+<p>具体见： <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/njzjz/hexo-image-cloudflare">https://github.com/njzjz/hexo-image-cloudflare</a></p>
+<h2 id="优化第三方资源加载"><a href="#优化第三方资源加载" class="headerlink" title="优化第三方资源加载"></a>优化第三方资源加载</h2><p>字体资源、Jquery、图标CSS等第三方资源使用【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.bootcdn.cn/">BootCDN</a>】或者【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jsdelivr.com/">jsdelivr</a>】等公共CDN的引用地址，并适当启用预加载或者异步加载。</p>
+<h2 id="使用预加载"><a href="#使用预加载" class="headerlink" title="使用预加载"></a>使用预加载</h2><p>使用【<a target="_blank" rel="external nofollow noopener noreferrer" href="https://instant.page/">instant.page</a>】开启页面预加载</p>
+<p><strong>Make your site’s pages instant in 1 minute and improve your conversion rate by 1%！</strong></p>
+<p>使用方法：<br>直接将此 HTML 片段放在<code>&lt;/body&gt;</code>之前即可。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//instant.page/5.1.0&quot;</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或者自托管</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;路径/js/instantpage.js&quot;</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<div class="note danger">注意:
+
+<p>使用 <strong>Instant.page</strong>会显著增加自己的站点的 PV 以及请求量，对于使用CDN全站加速的小伙伴需要着重注意，因为CDN的请求数也是要收费的。</p>
+</div>
+
+
+<h2 id="针对性引入第三方资源"><a href="#针对性引入第三方资源" class="headerlink" title="针对性引入第三方资源"></a>针对性引入第三方资源</h2><p>摒弃全局引入所有第三方资源，只在所需页面才做引入，以减少页面不必要的资源请求。<br>全局<code>layout.ejs</code>仅引入 <strong>字体CSS</strong>、<strong>预加载JS</strong>和 <strong>点击爱心JS</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 其他代码 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- Noto Serif SC &amp;&amp; Anonymous Pro --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;preload stylesheet&quot;</span> <span class="attr">as</span>=<span class="string">&quot;style&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700</span></span></span><br><span class="line"><span class="string"><span class="tag">  &amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap&quot;</span> <span class="attr">crossorigin</span> &gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 预加载 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">aysnc</span> <span class="attr">src</span>=<span class="string">&quot;/js/instantpage.js&quot;</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 页面点击小爱心 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;/js/clicklove.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>仅在文章页面需要引入 <strong>图标CSS</strong>、<strong>Jquery</strong>和 <strong>代码复制功能相关JS</strong></p>
+<p>在<code>article.ejs</code>文件底部引入</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 其他代码 --&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- fortawesome CSS --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;preload stylesheet&quot;</span> <span class="attr">as</span>=<span class="string">&quot;style&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">&#x27;text/css&#x27;</span> <span class="attr">rel</span>=<span class="string">&quot;preload stylesheet&quot;</span> <span class="attr">as</span>=<span class="string">&quot;style&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 引入jquery --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 代码块复制功能 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;/js/clipboard_use.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>首页图标所需样式与文章所需样式冲突，也针对性引入。</p>
+<p>首页图标样式，在<code>home.ejs</code>中引入：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content-home text-center&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 其他代码 --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- fortawesome CSS --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;preload stylesheet&quot;</span> <span class="attr">as</span>=<span class="string">&quot;style&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><p>使用对象存储以及开启全站CDN等。</p>
+<p>在此暂时不做考虑，等续不起服务器再说！</p>
+
+      
+<div class="post-copyright" id="post-copyright">
+    <p class="post-copyright-author">
+        <b>本文作者：
+        <a href="/" target="_blank" title="Senorui">
+        Senorui</a></b>
+    </p>
+    <p class="post-copyright-link">
+        <b>本文链接：
+        <a href="/posts/6bcd.html" target="_blank" title="对本站进行的一系列优化">
+        https://senorui.top/posts/6bcd.html</a></b>
+    </p>
+    <p class="post-copyright-license">
+        <b>版权声明：</b>
+        <font style="line-height:1.5em;">本站所有文章除特别声明外，均采用【<b><em><a rel="external nofollow noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC BY-NC-ND 4.0</a></em></b>】国际许可协议，若转载请注明出处！</font>
+    </p>
+</div>
+
+      
+    
+  </div>
+
+  <!-- fortawesome CSS -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css">
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+  <!-- 引入jquery -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  
+  <!-- 代码块复制功能（clipboard@1.7.1) -->
+  <script type="text/javascript" defer src="https://fastly.jsdelivr.net/npm/clipboard@1.7.1/dist/clipboard.js"></script>
+  <script type="text/javascript" defer src="/js/clipboard_use.js"></script>
+  
+  <!-- Viewer图片放大 -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.css">
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/viewerjs/dist/viewer.js"></script>
+  <script>
+  if (document.getElementById('article-content')) {
+        new Viewer(document.getElementById('article-content'), {
+            toolbar: 1,
+        });
+    }
+  </script>
+</article>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">知识无价，欢迎打赏🍖</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/img/home/qr-wechat.webp" alt>
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/img/home/qr-alipay.webp" alt>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/posts/bce7.html">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/posts/a0e3.html">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a class="back-top" id="backTop">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/archives/" rel="noopener noreferrer" target="_self">
+              文档
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/category/" rel="noopener noreferrer" target="_self">
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/tag/" rel="noopener noreferrer" target="_self">
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/link/" rel="noopener noreferrer" target="_self">
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/about/" rel="noopener noreferrer" target="_self">
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/search/" rel="noopener noreferrer" target="_self">
+              搜索
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a class="CIRCLE" href="/atom.xml" rel="noopener noreferrer" target="_blank">
+              RSS
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+  
+  <!-- 预加载 -->
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/instant.page/instantpage.js"></script>
+  
+  <!-- 页面点击小爱心 -->
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+  
+  <!-- Noto Serif SC && Anonymous Pro -->
+  <link type="text/css" rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" crossorigin>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":133,"height":223},"mobile":{"show":false,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.4},"log":false});</script></body>
+</html>
+</html>
